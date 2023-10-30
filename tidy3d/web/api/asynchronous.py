@@ -19,6 +19,8 @@ def run_async(
     """Submits a set of Union[:class:`.Simulation`, :class:`.HeatSimulation`] objects to server,
     starts running, monitors progress, downloads, and loads results as a :class:`.BatchData` object.
 
+    .. TODO add example and see also reference.
+
     Parameters
     ----------
     simulations : Dict[str, Union[:class:`.Simulation`, :class:`.HeatSimulation`]]
@@ -40,6 +42,16 @@ def run_async(
     :class:`BatchData`
         Contains the Union[:class:`.SimulationData`, :class:`.HeatSimulationData`] for each
         Union[:class:`.Simulation`, :class:`.HeatSimulation`] in :class:`Batch`.
+
+    See Also
+    --------
+
+    :class:`Job`:
+        Interface for managing the running of a Simulation on server.
+
+    :class:`Batch`
+        Interface for submitting several :class:`Simulation` objects to sever.
+>>>>>>> a3132ff6 (FEAT: Further links throughout):tidy3d/web/asynchronous.py
     """
 
     if simulation_type is None:
