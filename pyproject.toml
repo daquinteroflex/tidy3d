@@ -96,6 +96,7 @@ nbdime = {version="*", optional = true}
 optax = {version="*", optional = true}
 signac = {version="*", optional = true}
 sax = {version="*", optional = true}
+vtk = {version="<=9.2.6", optional = true}
 
 [tool.poetry.extras]
 dev = ["pre-commit", "black", "ruff", "tox", "pytest", "pytest-timeout", "memory_profiler", "dill", "ipython", "gdspy", "gdstk", "trimesh", "jax", "jaxlib", "networkx", "rtree", "jupyter", "jinja2", "nbconvert", "sphinx", "nbsphinx", "ipython", "divparams", "sphinx-copybutton", "sphinx-book-theme", "m2r2", "tmm", "gdstk", "grcwa", "sphinx-sitemap", "nbdime", "optax", "signac", "sax", "pylint", "jupyterblack", "pydata-sphinx-theme", "sphinx-tabs", "vtk"]
@@ -104,6 +105,7 @@ gdspy = ["gdspy"]
 gdstk = ["gdstk"]
 jax = ["jaxlib", "jax"]
 trimesh = ["trimesh", "networkx", "rtree"]
+vtk = ["vtk"]
 
 [tool.poetry.scripts]
 tidy3d = "tidy3d.web.cli:tidy3d_cli"
