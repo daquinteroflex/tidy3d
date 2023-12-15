@@ -87,6 +87,7 @@ def ensure_freq_in_range(eps_model: Callable[[float], complex]) -> Callable[[flo
 class NonlinearModel(ABC, Tidy3dBaseModel):
     """Abstract model for a nonlinear material response.
     Used as part of a :class:`.NonlinearSpec`."""
+
     def _validate_medium_type(self, medium: AbstractMedium):
         """Check that the model is compatible with the medium."""
         if isinstance(medium, AbstractCustomMedium):
@@ -160,14 +161,8 @@ class NonlinearModel(ABC, Tidy3dBaseModel):
         pass
 
 
-<<<<<<< HEAD
 class NonlinearSusceptibility(NonlinearModel):
     """Model for an instantaneous nonlinear chi3 susceptibility.
-=======
-class NonlinearSusceptibility(NonlinearSpec):
-    """
-    Specification adding an instantaneous nonlinear susceptibility to a medium.
->>>>>>> 416e40b1 (FEAT: Cleanup docstrings from a-mode)
     The expression for the instantaneous nonlinear polarization is given below.
 
     Notes
