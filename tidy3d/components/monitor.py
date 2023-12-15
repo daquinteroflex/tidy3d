@@ -19,7 +19,6 @@ from ..log import log
 
 from .base_sim.monitor import AbstractMonitor
 
-
 BYTES_REAL = 4
 BYTES_COMPLEX = 8
 WARN_NUM_FREQS = 2000

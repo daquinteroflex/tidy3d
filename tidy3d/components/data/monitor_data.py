@@ -37,8 +37,8 @@ from ...log import log
 
 from ..base_sim.data.monitor_data import AbstractMonitorData
 
-
 Coords1D = ArrayFloat1D
+
 
 class MonitorData(AbstractMonitorData, ABC):
     """

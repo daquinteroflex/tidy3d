@@ -90,7 +90,7 @@ PML_HEIGHT_FOR_0_DIMS = 0.02
 
 
 class Simulation(AbstractSimulation):
-    """"
+    """
     Custom implementation of Maxwell’s equations which represents the physical model to be solved using the FDTD
     method.
 
