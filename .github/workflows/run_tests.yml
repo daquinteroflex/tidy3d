@@ -8,7 +8,6 @@ on:
     branches:
       - development
       - 'pre/*'
-      - poetry_upgrade
 
 jobs:
   build:
