@@ -51,7 +51,6 @@ def run_async(
 
     :class:`Batch`
         Interface for submitting several :class:`Simulation` objects to sever.
->>>>>>> a3132ff6 (FEAT: Further links throughout):tidy3d/web/asynchronous.py
     """
 
     if simulation_type is None:

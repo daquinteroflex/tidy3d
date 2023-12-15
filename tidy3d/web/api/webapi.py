@@ -52,7 +52,6 @@ def run(
 
     Submits a :class:`.Simulation` to server, starts running, monitors progress, downloads,
     and loads results as a :class:`.SimulationData` object.
->>>>>>> 2d1cef10 (FEAT: This needs a massive cleanup but more FAQ into API added):tidy3d/web/webapi.py
 
     Parameters
     ----------
@@ -120,8 +119,6 @@ def run(
 
     :meth:`tidy3d.web.Batch.monitor`
         Monitor progress of each of the running tasks.
-
->>>>>>> 2d1cef10 (FEAT: This needs a massive cleanup but more FAQ into API added):tidy3d/web/webapi.py
     """
     task_id = upload(
         simulation=simulation,
@@ -643,8 +640,6 @@ def load(
 
         The :meth:`tidy3d.web.load` method is very convenient to load and postprocess results from simulations
         created using Tidy3D GUI.
-
->>>>>>> 2d1cef10 (FEAT: This needs a massive cleanup but more FAQ into API added):tidy3d/web/webapi.py
 
     Parameters
     ----------
