@@ -100,7 +100,6 @@ class Job(WebContainer):
     **Notebooks**
         *  `Running simulations through the cloud <../../notebooks/WebAPI.html>`_
         * `Performing parallel / batch processing of simulations <../../notebooks/ParameterScan.html>`_
-        * `Parameter Scan using signac <../../notebooks/ParameterScan.html#Parameter-Scan-using-Signac>`_
         * `Inverse taper edge coupler <../../notebooks/EdgeCoupler.html>`_
     """
 
@@ -321,10 +320,6 @@ class BatchData(Tidy3dBaseModel):
         data within this :class:`BatchData` object can either be indexed directly ``batch_results[task_name]`` or can be looped
         through ``batch_results.items()`` to get the :class:`.SimulationData` for each task.
 
-        This was chosen to reduce the memory strain from loading all :class:`.SimulationData` objects at once.
-
-        Alternatively, the batch can be looped through (several times) using the ``.items()`` method, similar to a dictionary.
-
     See Also
     --------
 
@@ -420,7 +415,6 @@ class Batch(WebContainer):
     **Notebooks**
         * `Running simulations through the cloud <../../notebooks/WebAPI.html>`_
         * `Performing parallel / batch processing of simulations <../../notebooks/ParameterScan.html>`_
-        * `Parameter Scan using signac <../../notebooks/ParameterScan.html#Parameter-Scan-using-Signac>`_
         * `Inverse taper edge coupler <../../notebooks/EdgeCoupler.html>`_
     """
 

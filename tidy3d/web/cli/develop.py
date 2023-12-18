@@ -1,15 +1,26 @@
 """Console script for tidy3d."""
-import platform
-
 import click
+import pathlib
+import platform
 import subprocess
 import re
+import tidy3d
 
 
-def echo_and_run_subprocess(command: list):
+def get_install_directory():
+    return pathlib.Path(tidy3d.__file__).parent.parent.absolute()
+
+
+def echo_and_run_subprocess(command: list, **kwargs):
     concatenated_command = " ".join(command)
     print("Running: " + concatenated_command)
-    subprocess.run(command)
+    return subprocess.run(command, cwd=get_install_directory(), **kwargs)
+
+
+def echo_and_check_subprocess(command: list, **kwargs):
+    concatenated_command = " ".join(command)
+    print("Running: " + concatenated_command)
+    return subprocess.check_call(command, cwd=get_install_directory(), **kwargs)
 
 
 def verify_pandoc_is_installed_and_version_less_than_3():
@@ -81,14 +92,9 @@ def verify_sphinx_is_installed():
         echo_and_run_subprocess(["poetry", "env", "use", "python"])
         result = echo_and_run_subprocess(
             ["poetry", "run", "python -m", "sphinx --version"],
-            capture_output=True,
-            text=True,
-            check=True,
         )
         # If the command was successful, we'll get the version info
-        if result.returncode == 0:
-            print("sphinx is installed: " + result.stdout)
-            return True
+        print("sphinx is installed: " + result.stdout)
     except subprocess.CalledProcessError:
         # This exception is raised if the command returned a non-zero exit status
         raise OSError("sphinx is not installed or not found in the poetry environment.")
@@ -100,11 +106,19 @@ def develop():
     pass
 
 
+@develop.command(name="get-install-directory", help="Gets the TIDY3D base directory.")
+def get_directory():
+    """Gets the tidy3d installation directory."""
+    print(get_install_directory())
+    return 0
+
+
 @develop.command(name="verify-dev-environment", help="Verifies the development environment.")
 def verify_development_environment(args=None):
+    """Verifies that the environment in which this is run conforms to the provided poetry.lock with all the
+    development options included."""
     # Does all the docs verifications
     # Checks all the other development dependencies are properly installed
-    """Verifies that the environment in which this is run conforms to the provided poetry.lock with all the development options included."""
     # Verify pipx is installed
     verify_pipx_is_installed()
     # Verify poetry is installed
@@ -112,8 +126,8 @@ def verify_development_environment(args=None):
     # Verify pandoc is installed
     verify_pandoc_is_installed_and_version_less_than_3()
     # Dry run the poetry install to understand the configuration
-    echo_and_run_subprocess(["poetry", "env", "use", "python"])
-    echo_and_run_subprocess(["poetry", "install", "-E", "dev", "--dry-run"])
+    echo_and_check_subprocess(["poetry", "env", "use", "python"])
+    echo_and_check_subprocess(["poetry", "install", "-E", "dev", "--dry-run"])
     print(
         "`poetry install -E dev` dry run on the `poetry.lock` complete.\nManually verify packages are properly installed."
     )
@@ -121,7 +135,6 @@ def verify_development_environment(args=None):
 
 
 def configure_notebook_submodule(args=None):
-    # TODO cd to local installation environment
     echo_and_run_subprocess(["git", "submodule", "init"])
     echo_and_run_subprocess(["git", "submodule", "update", "--remote"])
     print("Notebook submodule updated from remote.")
@@ -197,6 +210,9 @@ def configure_development_environment(args=None):
             "command again. You can also follow our detailed instructions under the development guide."
         )
 
+    # Makes sure that poetry uses the python environment active on the terminal.
+
+    echo_and_run_subprocess(["poetry", "env", "use", "python"])
     # Makes sure the package has installed all the development dependencies.
     echo_and_run_subprocess(["poetry", "install", "-E", "dev"])
 
@@ -232,6 +248,7 @@ def commit(message, submodule_path):
             repo_path: Path to the repository.
             message: Commit message.
         """
+
         subprocess.check_call(["git", "-C", repository_path, "add", "."])
         subprocess.check_call(
             ["git", "-C", repository_path, "commit", "--no-verify", "-am", commit_message]
@@ -249,7 +266,6 @@ def commit(message, submodule_path):
 def build_documentation(args=None):
     """Verifies and builds the documentation."""
     # Runs the documentation build from the poetry environment
-    # TODO cd to local path
     # TODO update generic path management.
     echo_and_run_subprocess(["poetry", "run", "python", "-m", "sphinx", "docs/", "_docs/"])
     return 0
@@ -259,7 +275,6 @@ def build_documentation(args=None):
 def build_documentation_pdf(args=None):
     """Verifies and builds the documentation."""
     # Runs the documentation build from the poetry environment
-    # TODO cd to local path
     # TODO update generic path management.
     echo_and_run_subprocess(
         ["poetry", "run", "python", "-m", "sphinx", "-M", "latexpdf", "docs/", "_pdf/"]
@@ -271,7 +286,18 @@ def build_documentation_pdf(args=None):
 def test_base_tidy3d(args=None):
     """Verifies and builds the documentation."""
     # Runs the documentation build from the poetry environment
-    # TODO cd to local path
     # TODO update generic path management.
     echo_and_run_subprocess(["poetry", "run", "pytest", "-rA", "tests"])
+    return 0
+
+
+@develop.command(
+    name="install-in-poetry", help="Just installs the tidy3d development package in poetry."
+)
+def install_poetry(args=None):
+    """Requires pipx and poetry installation to work."""
+    # Runs the documentation build from the poetry environment
+    # TODO update generic path management.
+    echo_and_run_subprocess(["poetry", "env", "use", "python"])
+    echo_and_run_subprocess(["poetry", "install", "-E", "dev"])
     return 0

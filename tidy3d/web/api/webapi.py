@@ -49,9 +49,8 @@ def run(
     worker_group: str = None,
 ) -> SimulationDataType:
     """
-
     Submits a :class:`.Simulation` to server, starts running, monitors progress, downloads,
-    and loads results as a :class:`.SimulationData` object.
+    and loads results as a :class:`.SimulationDataType` object.
 
     Parameters
     ----------
