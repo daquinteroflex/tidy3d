@@ -688,8 +688,6 @@ class CustomFieldSource(FieldSource, PlanarSource):
         the directionality of the source will likely not be perfect, even if both the ``E`` and ``H`` fields are
         provided. An empty normalizing run may be needed to accurately normalize results.
 
-    Note
-    ----
         The coordinates of all provided fields are assumed to be relative to the source center.
         If only the ``E`` or only the ``H`` fields are provided, the source will not be directional,
         but will inject equal power in both directions instead.

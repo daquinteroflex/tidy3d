@@ -2038,6 +2038,7 @@ class PoleResidue(DispersiveMedium):
 
     Notes
     -----
+
         The frequency-dependence of the complex-valued permittivity is described by:
 
         .. math::
@@ -3230,6 +3231,7 @@ class CustomDrude(CustomDispersiveMedium, Drude):
 
     Notes
     -----
+
         The frequency-dependence of the complex-valued permittivity is described by:
 
         .. math::
@@ -3547,6 +3549,7 @@ class AnisotropicMedium(AbstractMedium):
 
     Notes
     -----
+
         Only diagonal anisotropy is currently supported.
 
     Example
@@ -4120,6 +4123,7 @@ class CustomAnisotropicMediumInternal(CustomAnisotropicMedium):
 
     Notes
     -----
+
         Only diagonal anisotropy is currently supported.
 
     Example
@@ -4324,6 +4328,7 @@ class PerturbationPoleResidue(PoleResidue, AbstractPerturbationMedium):
 
     Notes
     -----
+
         The frequency-dependence of the complex-valued permittivity is described by:
 
         .. math::
@@ -4467,7 +4472,8 @@ class Medium2D(AbstractMedium):
 
     Notes
     -----
-    Only diagonal anisotropy is currently supported.
+
+        Only diagonal anisotropy is currently supported.
 
     Example
     -------

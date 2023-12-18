@@ -937,7 +937,7 @@ class FieldProjectionAngleMonitor(AbstractFieldProjectionMonitor):
         more accurate than client-side ones, because on the server, the near fields are not downsampled at all.
 
         We can re-project the already-computed far fields to a different distance away from the structure - we
-        neither need to run another simulation nor re-run the ``FieldProjector``.
+        neither need to run another simulation nor re-run the :class:`FieldProjector`.
 
         **Far-Field Approximation Selection**
 
@@ -1179,7 +1179,8 @@ class FieldProjectionKSpaceMonitor(AbstractFieldProjectionMonitor):
 
      Notes
      -----
-         The ``center`` and ``size``
+
+         The :attr:`center` and :attr:`size`
         fields define where the monitor will be placed in order to record near fields, typically
         very close to the structure of interest. The near fields are then
         projected to far-field locations defined in k-space by ``ux``, ``uy``, and ``proj_distance``,

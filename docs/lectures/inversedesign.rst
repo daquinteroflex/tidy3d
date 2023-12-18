@@ -12,4 +12,9 @@ Adjoint optimization is a powerful tool that has gained significant attention in
 
 `Lecture 4: Fabrication Constraints <https://www.flexcompute.com/tidy3d/learning-center/inverse-design/Inverse-Design-in-Photonics-Lecture-4-Fabrication-Constraints/>`_
 
+`Lecture 5: Shape Optimization <https://www.flexcompute.com/tidy3d/learning-center/inverse-design/Inverse-Design-in-Photonics-Lecture-5-Shape-Optimization/>`_
+
+`Lecture 6: Level Set Parameterization <https://www.flexcompute.com/tidy3d/learning-center/inverse-design/Inverse-Design-in-Photonics-Lecture-6-Level-Set-Parameterization/>`_
+
+
 More lectures coming soon!

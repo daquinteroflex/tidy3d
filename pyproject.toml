@@ -159,6 +159,7 @@ ignore = [
   "UP038", # TODO decide what to do here
   "UP035", # TODO decide what to do here
 ]
+
 select = [
   "E",  # pycodestyle errors
   "W",  # pycodestyle warnings
