@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - latest
+      - repo_merge_no_history
   workflow_dispatch:
     inputs:
       env:
@@ -38,7 +39,7 @@ jobs:
         run: |
           case ${{ env.ENV }} in
             dev)
-            echo "::set-output name=branch::develop"
+            echo "::set-output name=branch::repo_merge_no_history"
             ;;
             prod)
             echo "::set-output name=branch::main"
@@ -59,7 +60,7 @@ jobs:
           branch: ${{ needs.set_env.outputs.dest-branch }}
       - run: |
           mkdir -p build_toc
-          cp docs/examples.rst build_toc/examples.rst
+          cp docs/notebooks/index.rst build_toc/examples.rst
 
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
