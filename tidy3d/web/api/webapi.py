@@ -88,11 +88,12 @@ def run(
 
         .. code-block:: python
 
-            sim_data = tidy3d.web.run(simulation, task_name='my_task', path='out/data.hdf5')
+            sim_data = tidy3d.web.api.webapi.run(simulation, task_name='my_task', path='out/data.hdf5')
 
-        The :meth:`tidy3d.web.run()` method shows the simulation progress by default.  When uploading a simulation to
-        the server without running it, you can use the :meth:`tidy3d.web.monitor`, :meth:`tidy3d.web.Job.monitor`, or :meth:`tidy3d.web.Batch.monitor`
-        methods to display the progress of your simulation(s).
+        The :meth:`tidy3d.web.api.webapi.run()` method shows the simulation progress by default.  When uploading a
+        simulation to the server without running it, you can use the :meth:`tidy3d.web.api.webapi.monitor`,
+        :meth:`tidy3d.web.api.container.Job.monitor`, or :meth:`tidy3d.web.api.container.Batch.monitor` methods to
+        display the progress of your simulation(s).
 
     Examples
     --------
@@ -110,13 +111,13 @@ def run(
     See Also
     --------
 
-    :meth:`tidy3d.web.monitor`
+    :meth:`tidy3d.web.api.webapi.monitor`
         Print the real time task progress until completion.
 
-    :meth:`tidy3d.web.Job.monitor`
+    :meth:`tidy3d.web.api.container.Job.monitor`
         Monitor progress of running :class:`Job`.
 
-    :meth:`tidy3d.web.Batch.monitor`
+    :meth:`tidy3d.web.api.container.Batch.monitor`
         Monitor progress of each of the running tasks.
     """
     task_id = upload(
@@ -184,7 +185,7 @@ def upload(
     Notes
     -----
 
-        Once you've created a ``job`` object using :class:`tidy3d.web.Job`, you can upload it to our servers with:
+        Once you've created a ``job`` object using :class:`tidy3d.web.api.container.Job`, you can upload it to our servers with:
 
         .. code-block:: python
 
@@ -325,7 +326,7 @@ def monitor(task_id: TaskId, verbose: bool = True) -> None:
 
         .. code-block:: python
 
-            tidy3d.web.monitor(job.task_id, verbose=verbose).
+            tidy3d.web.api.webapi.monitor(job.task_id, verbose=verbose).
 
     Parameters
     ----------
@@ -637,7 +638,7 @@ def load(
 
             sim_data = web.load(task_id, path="outt/sim.hdf5", verbose=verbose)
 
-        The :meth:`tidy3d.web.load` method is very convenient to load and postprocess results from simulations
+        The :meth:`tidy3d.web.api.webapi.load` method is very convenient to load and postprocess results from simulations
         created using Tidy3D GUI.
 
     Parameters

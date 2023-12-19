@@ -46,7 +46,7 @@ class Job(WebContainer):
     Examples
     --------
 
-        Once you've created a ``job`` object using :class:`tidy3d.web.Job`, you can upload it to our servers with:
+        Once you've created a ``job`` object using :class:`tidy3d.web.api.container.Job`, you can upload it to our servers with:
 
         .. code-block:: python
 
@@ -62,13 +62,13 @@ class Job(WebContainer):
 
         .. code-block:: python
 
-            tidy3d.web.monitor(job.task_id, verbose=verbose)
+            tidy3d.web.api.webapi.monitor(job.task_id, verbose=verbose)
 
         After running the simulation, you can load the results using for example:
 
         .. code-block:: python
 
-            sim_data = tidy3d.web.load(job.task_id, path="out/simulation.hdf5", verbose=verbose)
+            sim_data = tidy3d.web.api.webapi.load(job.task_id, path="out/simulation.hdf5", verbose=verbose)
 
         The job container has a convenient method to save and load the results of a job that has already finished,
         without needing to know the task_id, as below:
@@ -81,7 +81,7 @@ class Job(WebContainer):
             # You can exit the session, break here, or continue in new session.
 
             # Load the job metadata from file.
-            job_loaded = tidy3d.web.Job.from_file("data/job.json")
+            job_loaded = tidy3d.web.api.container.Job.from_file("data/job.json")
 
             # Download the data from the server and load it into a SimulationData object.
             sim_data = job_loaded.load(path="data/sim.hdf5")
@@ -235,7 +235,7 @@ class Job(WebContainer):
 
         Note
         ----
-        To load the output of completed simulation into :class:`.SimulationData`objets,
+        To load the output of completed simulation into :class:`.SimulationData` objects,
         call :meth:`Job.load`.
         """
         web.monitor(self.task_id, verbose=self.verbose)
@@ -630,7 +630,7 @@ class Batch(WebContainer):
                         status = job.status
                         description = pbar_description(task_name, status)
 
-                        # if a problem occured, update progressbar completion to 100%
+                        # if a problem occurred, update progressbar completion to 100%
                         if status not in run_statuses:
                             completed = run_statuses.index("success")
                         else:

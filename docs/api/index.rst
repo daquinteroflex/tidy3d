@@ -16,8 +16,10 @@ API
     mode
     discretization
     output_data
+    scene
     logging
     submit_simulations
+    heat/index
     plugins/index
     constants
     abstract_base
@@ -33,8 +35,10 @@ API
 .. include:: mode.rst
 .. include:: discretization.rst
 .. include:: output_data.rst
+.. include:: scene.rst
 .. include:: logging.rst
 .. include:: submit_simulations.rst
+.. include:: heat/index.rst
 .. include:: plugins/index.rst
 .. include:: constants.rst
 .. include:: abstract_base.rst

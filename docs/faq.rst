@@ -9,7 +9,7 @@ Tidy3D is Flexcompute's ultrafast electromagnetic (EM) solver. The solver is bas
 How can I install the Python client of Tidy3d?
 ----------------------------------------------
 
-We recommend using the Conda package management system to manage your Python virtual environment as well as installing Tidy3D. To avoid package version incapability issues, we recommend creating a new Conda environment and install Tidy3D via pip. Please follow the detailed installation instructions `here <https://docs.flexcompute.com/projects/tidy3d/en/stable/install.html/>`_. If you encounter any issues during installation, please reach out to us and we will provide the necessary help to you in a timely manner.
+We recommend using the Conda package management system to manage your Python virtual environment as well as installing Tidy3D. To avoid package version incapability issues, we recommend a creating new Conda environment and install Tidy3D via pip. Please follow the detailed installation instructions `here <https://docs.flexcompute.com/projects/tidy3d/en/stable/install.html/>`_. If you encounter any issues during installation, please reach out to us and we will provide the necessary help to you in a timely manner.
 
 Can I do a free trial to evaluate the capabilities of Tidy3D before purchasing it?
 ----------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ Lastly, Tidy3D not only has a feature-rich web GUI, but also fully embraces the 
 How do I run a simulation and access the results?
 -------------------------------------------------
 
-Submitting and monitoring jobs, and donwloading the results, is all done 
+Submitting and monitoring jobs, and downloading the results, is all done
 through our `web API <api.html#web-api/>`_. After a successful run, 
 all data for all monitors can be downloaded in a single ``.hdf5`` file 
 using :meth:`tidy3d.web.webapi.load`, and the
@@ -60,7 +60,7 @@ Do I have to know Python programming to use Tidy3D?
 Tidy3D simulations can be defined in two ways: our web GUI or Python scripts. If you do not have Python programming 
 experience, you can use our feature-rich web GUI to define simulation, submit simulation, and visualize simulation 
 results.
-Since defining simulation and performing post-processing in Python offers additional flexibity, we do 
+Since defining simulation and performing post-processing in Python offers additional flexibility, we do
 recomment our users to learn to use Python, especially for more complex simulations. There are a lot of great free 
 resources for learning Python online. You can also reference our Python API documentation as well as a variety of 
 examples in our `Learning Center <https://www.flexcompute.com/tidy3d/learning-center/>`_.
@@ -118,7 +118,7 @@ used:
  - Magnetic field: Ampere per micron (A/μm)
  - Flux: Watt (W)
  - Poynting vector: Watt per micron squared (W/μm\ :sup:`2`)
- - Modal amplitude: Sqare root of watt (W\ :sup:`1/2`)
+ - Modal amplitude: Square root of watt (W\ :sup:`1/2`)
 
 If the source normalization is not applied, the electric field, magnetic field, and modal amplitudes are divided by
 Hz, while the flux and Poynting vector are divided by Hz\ :sup:`2`.
@@ -221,7 +221,7 @@ given frequency :math:`f`. The relationship between the two equivalent models is
     &\sigma = 2 \pi f \epsilon_0 \mathrm{Im}(\epsilon_r)
 
 In the case of (almost) lossless dielectrics, the dispersion could be negligible in a broad 
-frequency window, but generally, it is importat to keep in mind that such a 
+frequency window, but generally, it is important to keep in mind that such a
 material definition is best suited for single-frequency results.
 
 For lossless, weakly dispersive materials, the best way to incorporate the dispersion 
@@ -329,8 +329,8 @@ hood when using Tidy3D in-built methods to compute such quantities. When using f
 
 Regardless of whether the ``colocate`` option is on or off for a given monitor, the data can also be easily colocated after the solver run. In principle, if colocating to locations other than the primal grid in post-processing, it is more accurate to set ``colocate=False`` in the monitor to avoid double interpolation (first to the primal grid in the solver, then to new locations). Regardless, the following methods work for both Yee grid data and data that has already been previously colocated:
 
-- ``data_at_boundaries = sim_data.at_boundaries(monitor_name)`` to colocate all fields of a monitor to the Yee grid cell boundaries (i.e. the primal grid vertexes).
-- ``data_at_centers = sim_data.at_centers(monitor_name)`` to colocate all fields of a monitor to the Yee grid cell centers (i.e. the dual grid vertexes).
+- ``data_at_boundaries = sim_data.at_boundaries(monitor_name)`` to colocate all fields of a monitor to the Yee grid cell boundaries (i.e. the primal grid vertices).
+- ``data_at_centers = sim_data.at_centers(monitor_name)`` to colocate all fields of a monitor to the Yee grid cell centers (i.e. the dual grid vertices).
 - ``data_at_coords = sim_data[monitor_name].colocate(x=x_points, y=y_points, z=z_points)`` to colocate all fields to a custom set of coordinates. Any or all of ``x``, ``y``, and ``z`` can be supplied; if some are not, the original data coordinates are kept along that dimension.
 
 How fine of a grid or mesh does my simulation need? How to choose grid spec?
@@ -383,7 +383,7 @@ over the mesh is obtained by the :py:obj:`dl_min` parameter, which imposes a low
 the structures present in the simulation, including override structures with :py:obj:`enforced=True`. This is, however, 
 a soft bound, meaning that the actual minimal grid size might be slightly smaller. Finally, the :py:obj:`max_scale` sets 
 the maximum ratio between two consecutive grid steps. Different grid configurations can be chosen for each direction, 
-as illustrated bellow:
+as illustrated below:
 
 .. code-block:: python
 

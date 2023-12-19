@@ -83,8 +83,21 @@ Nonlinear
    :toctree: _autosummary/
    :template: module.rst
 
-    tidy3d.NonlinearSpec
-    tidy3d.NonlinearSusceptibility
+   tidy3d.NonlinearSpec
+   tidy3d.NonlinearSusceptibility
+   tidy3d.KerrNonlinearity
+   tidy3d.TwoPhotonAbsorption
+
+Time Modulation
+^^^^^^^^^^^^^^^
+
+.. autosummary::
+   :toctree: _autosummary/
+
+   tidy3d.ModulationSpec
+   tidy3d.SpaceTimeModulation
+   tidy3d.ContinuousWaveTimeModulation
+   tidy3d.SpaceModulation
 
 Material Library
 ----------------

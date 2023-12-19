@@ -18,7 +18,7 @@ This repository stores the python interface for Tidy3d.
 
 This code allows you to:
 * Programmatically define FDTD simulations.
-* Submit and magange simulations running on Flexcompute's servers.
+* Submit and manage simulations running on Flexcompute's servers.
 * Download and postprocess the results from the simulations.
 
 You can find a detailed documentation and API reference [here](https://docs.flexcompute.com/projects/tidy3d/en/stable/).
