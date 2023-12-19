@@ -76,13 +76,6 @@ jax = [
     {version = ">=0.4.13,<=0.4.14", extras = ["cpu"], platform = "win32", source="jaxsource", optional = true}
 ]
 
-jax = [
-    {version = "^0.4.1", extras = ["cpu"], platform = "linux", source="jaxsource", optional = true},
-    {version = "^0.4.1", extras = ["cpu"], platform = "darwin",  source="jaxsource", optional = true},
-    {version = "^0.4.13", extras = ["cpu"], platform = "win32", source="jaxsource", optional = true}
-]
-
-
 # trimesh
 trimesh = {version = "3.20.0", optional = true}
 networkx = {version = "^2.6.3", optional = true}

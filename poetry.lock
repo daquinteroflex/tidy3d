@@ -578,6 +578,25 @@ files = [
 
 [[package]]
 name = "chex"
+version = "0.1.82"
+description = "Chex: Testing made fun, in JAX!"
+optional = true
+python-versions = ">=3.9"
+files = [
+    {file = "chex-0.1.82-py3-none-any.whl", hash = "sha256:4df8f087e30c3879c15d3765f9081d5996e57682fa1fbaa8a16a1eab6f6eb2d0"},
+    {file = "chex-0.1.82.tar.gz", hash = "sha256:a9b151ada0b5c1bc5a8ae572617eb09f2fe4ff110fe1d75045f9083eecf5b2c1"},
+]
+
+[package.dependencies]
+absl-py = ">=0.9.0"
+jax = ">=0.4.6"
+jaxlib = ">=0.1.37"
+numpy = ">=1.25.0"
+toolz = ">=0.9.0"
+typing-extensions = ">=4.2.0"
+
+[[package]]
+name = "chex"
 version = "0.1.85"
 description = "Chex: Testing made fun, in JAX!"
 optional = true
@@ -969,6 +988,32 @@ typing = ["typing-extensions (>=4.8)"]
 
 [[package]]
 name = "flax"
+version = "0.7.4"
+description = "Flax: A neural network library for JAX designed for flexibility"
+optional = true
+python-versions = ">=3.9"
+files = [
+    {file = "flax-0.7.4-py3-none-any.whl", hash = "sha256:84fbcdd70b993bc4a307a140d68d5923d24baadda317ac73d2144977f0ec7d54"},
+    {file = "flax-0.7.4.tar.gz", hash = "sha256:d697323b557e92c1372798c2e2ae44bb7c123647158fc878bc765e45e25d990d"},
+]
+
+[package.dependencies]
+jax = ">=0.4.2"
+msgpack = "*"
+numpy = ">=1.12"
+optax = "*"
+orbax-checkpoint = "*"
+PyYAML = ">=5.4.1"
+rich = ">=11.1"
+tensorstore = "*"
+typing-extensions = ">=4.2"
+
+[package.extras]
+all = ["matplotlib"]
+testing = ["black[jupyter] (==23.7.0)", "clu", "einops", "gymnasium[accept-rom-license,atari]", "jaxlib", "jraph (>=0.0.6dev0)", "ml-collections", "mypy", "nbstripout", "opencv-python", "pyink (==23.5.0)", "pytest", "pytest-cov", "pytest-custom-exit-code", "pytest-xdist (==1.34.0)", "pytype", "sentencepiece", "tensorflow", "tensorflow-datasets", "tensorflow-text (>=2.11.0)", "torch"]
+
+[[package]]
+name = "flax"
 version = "0.7.5"
 description = "Flax: A neural network library for JAX designed for flexibility"
 optional = true
@@ -1125,6 +1170,51 @@ optional = true
 python-versions = "*"
 files = [
     {file = "gdspy-1.6.13.zip", hash = "sha256:38c61a7267f90767d90b8fcdda96c7a629df26e06f7153084c773f3d6363f4f0"},
+]
+
+[package.dependencies]
+numpy = "*"
+
+[[package]]
+name = "gdstk"
+version = "0.9.37"
+description = "Python module for creation and manipulation of GDSII files."
+optional = true
+python-versions = "*"
+files = [
+    {file = "gdstk-0.9.37-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:ae2424113a1434d195196340ab28a691de88c59c2f14e280dba744542eb90143"},
+    {file = "gdstk-0.9.37-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b51b24966a128b3b72698e6a21a76dc2ad33fcb10034dec303964567578b25db"},
+    {file = "gdstk-0.9.37-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:8022295a9ee7480d3e2bae5827f979990dc35c62f1442d1e88ed5830ba90ce47"},
+    {file = "gdstk-0.9.37-cp310-cp310-win_amd64.whl", hash = "sha256:52405ad6eea1b9f0dd0580d21055e953dc5b2a2303be62787ec0649a27e9d83c"},
+    {file = "gdstk-0.9.37-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:7b8c4a8fb4e992d05a7178a1ab50f9ef6329c8e1e76c4f507b61c263b31baaf0"},
+    {file = "gdstk-0.9.37-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6069ada42f44a78ef3d13ff33a586ad1fb013e98f92730a7b6c15d731d399570"},
+    {file = "gdstk-0.9.37-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:23aec774897483667a21dfb6310ac417b0ec5baa49591a45a15df651ab2ceb9e"},
+    {file = "gdstk-0.9.37-cp311-cp311-win_amd64.whl", hash = "sha256:e29b0f9368f8942421c08cde63ea379e738e2d1c0dd06ea45286efbc9bd92cda"},
+    {file = "gdstk-0.9.37-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:481aa05b407cf8f60735d58c40a2df43da0bfee8093e9897a9552f7e5ce411d2"},
+    {file = "gdstk-0.9.37-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:36db562eb25db40776948f27a7018967bb666e7517aebf2c9ddf60625f59fbec"},
+    {file = "gdstk-0.9.37-cp36-cp36m-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:ef9e2f72c5175e573a7b83fb3f45e47c8451caf784a14d7b414cdcdef10d9a0d"},
+    {file = "gdstk-0.9.37-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:400d16d6d2339885d59710510f9736999fcc35031a23027a4b923d81f74cc7ff"},
+    {file = "gdstk-0.9.37-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3fd5fe8ba75cbf902e2f4fe896bb275c31c32a377356dd58f14082448a2507c7"},
+    {file = "gdstk-0.9.37-cp37-cp37m-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:4f5d702611ff507da0993d856f0c010758462e83fb2c366e0bd3ae1eadb87a76"},
+    {file = "gdstk-0.9.37-cp37-cp37m-win_amd64.whl", hash = "sha256:156312cddb137fcd0dfdba7f321d6478df0a413a093878588eb53471344f290c"},
+    {file = "gdstk-0.9.37-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:9786351c58c34111af973eb10a87296fec7f3928b8f7eefa1140c62fbc338480"},
+    {file = "gdstk-0.9.37-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9a116c2e8806eed0e21068af5e84b4cee251635382f87180014c28fd2d818c72"},
+    {file = "gdstk-0.9.37-cp38-cp38-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:907c626acf9d4e349ebab775784f916c48345a8c87921dd964b419d0d491cc5b"},
+    {file = "gdstk-0.9.37-cp38-cp38-win_amd64.whl", hash = "sha256:d88748d357197fcb400a6006ae82b9456659e3106eb5c039a8111a7690f04c0a"},
+    {file = "gdstk-0.9.37-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:83d76fc350bb4d2ddeffd343344751944d54ecfe2c081072bdbf7439a3e18f53"},
+    {file = "gdstk-0.9.37-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:78974a21a268f6797beee658b4b754c0a82008a7674458aa59165b4ab3065f86"},
+    {file = "gdstk-0.9.37-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:ca85ffda0636a0c5a16c65f6f41776861e7a987b14dbdb9b1e53fddd16252dfd"},
+    {file = "gdstk-0.9.37-cp39-cp39-win_amd64.whl", hash = "sha256:c6968054978d2c1a17198f842edf8aaeb0baad796addcfa463be19217086061b"},
+    {file = "gdstk-0.9.37-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:3cb6ee2132e7617c2c335e19dae1fc275ca628514576b3fcb0cb61d50ef93edf"},
+    {file = "gdstk-0.9.37-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fdcc6992952a327bcd4cda52a3596dc9a88417bad3942e174438572e5bac0ec6"},
+    {file = "gdstk-0.9.37-pp37-pypy37_pp73-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:cc5ffabc2aec6ad6706a260196b58eeaefeba0ac614c4eca39f9abfcecc569d2"},
+    {file = "gdstk-0.9.37-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:7d54e2271b2b02467428cc26a43307380d3dd20196033f2b8f3a1eb96425e24a"},
+    {file = "gdstk-0.9.37-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d4baa34e1d4cb6f4fa4a639cbc1133879ba4eb903ee659a2040dd0596dee5f8e"},
+    {file = "gdstk-0.9.37-pp38-pypy38_pp73-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d1fddde2159bc6f5844be7e200ddf776fd4510ee7f1767f189bbed5d7533da0f"},
+    {file = "gdstk-0.9.37-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:4f3fc607f64598d4a3eba978b06a8a9c11971978dbc2189ba0bea9510d8566f7"},
+    {file = "gdstk-0.9.37-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6063fbcbba1e1d5060f5b766efc94e75526e0a57419fc7fc1d616cb6437877df"},
+    {file = "gdstk-0.9.37-pp39-pypy39_pp73-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:1985caae9cf6cb49d1686fe921514e445d736a95376af8534c207703fda465e4"},
+    {file = "gdstk-0.9.37.tar.gz", hash = "sha256:1a4a7cb364a8d4f4d11521d275d38cea75fd86354e8cade16d5f0d3c797c69b6"},
 ]
 
 [package.dependencies]
@@ -1474,6 +1564,42 @@ colors = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "jax"
+version = "0.4.14"
+description = "Differentiate, compile, and transform Numpy code."
+optional = true
+python-versions = ">=3.9"
+files = [
+    {file = "jax-0.4.14.tar.gz", hash = "sha256:18fed3881f26e8b13c8cb46eeeea3dba9eb4d48e3714d8e8f2304dd6e237083d"},
+]
+
+[package.dependencies]
+importlib_metadata = {version = ">=4.6", markers = "python_version < \"3.10\""}
+jaxlib = {version = "0.4.14", optional = true, markers = "extra == \"cpu\""}
+ml_dtypes = ">=0.2.0"
+numpy = ">=1.22"
+opt_einsum = "*"
+scipy = ">=1.7"
+
+[package.extras]
+australis = ["protobuf (>=3.13,<4)"]
+ci = ["jaxlib (==0.4.13)"]
+cpu = ["jaxlib (==0.4.14)"]
+cuda = ["jaxlib (==0.4.14+cuda11.cudnn86)"]
+cuda11-cudnn86 = ["jaxlib (==0.4.14+cuda11.cudnn86)"]
+cuda11-local = ["jaxlib (==0.4.14+cuda11.cudnn86)"]
+cuda11-pip = ["jaxlib (==0.4.14+cuda11.cudnn86)", "nvidia-cublas-cu11 (>=11.11)", "nvidia-cuda-cupti-cu11 (>=11.8)", "nvidia-cuda-nvcc-cu11 (>=11.8)", "nvidia-cuda-runtime-cu11 (>=11.8)", "nvidia-cudnn-cu11 (>=8.8)", "nvidia-cufft-cu11 (>=10.9)", "nvidia-cusolver-cu11 (>=11.4)", "nvidia-cusparse-cu11 (>=11.7)"]
+cuda12-local = ["jaxlib (==0.4.14+cuda12.cudnn89)"]
+cuda12-pip = ["jaxlib (==0.4.14+cuda12.cudnn89)", "nvidia-cublas-cu12", "nvidia-cuda-cupti-cu12", "nvidia-cuda-nvcc-cu12", "nvidia-cuda-runtime-cu12", "nvidia-cudnn-cu12 (>=8.9)", "nvidia-cufft-cu12", "nvidia-cusolver-cu12", "nvidia-cusparse-cu12"]
+minimum-jaxlib = ["jaxlib (==0.4.11)"]
+tpu = ["jaxlib (==0.4.14)", "libtpu-nightly (==0.1.dev20230727)"]
+
+[package.source]
+type = "legacy"
+url = "https://storage.googleapis.com/jax-releases/jax_releases.html"
+reference = "jaxsource"
+
+[[package]]
+name = "jax"
 version = "0.4.23"
 description = "Differentiate, compile, and transform Numpy code."
 optional = true
@@ -1485,7 +1611,6 @@ files = [
 
 [package.dependencies]
 importlib-metadata = {version = ">=4.6", markers = "python_version < \"3.10\""}
-jaxlib = {version = "0.4.23", optional = true, markers = "extra == \"cpu\""}
 ml-dtypes = ">=0.2.0"
 numpy = [
     {version = ">=1.22", markers = "python_version < \"3.11\""},
@@ -1510,41 +1635,38 @@ tpu = ["jaxlib (==0.4.23)", "libtpu-nightly (==0.1.dev20231213)", "requests"]
 
 [[package]]
 name = "jaxlib"
-version = "0.4.23"
+version = "0.4.14"
 description = "XLA library for JAX"
 optional = true
 python-versions = ">=3.9"
 files = [
-    {file = "jaxlib-0.4.23-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:e3756e0601af7636ae58f42d24af70e46048ffef89bd5e05c303b899a2177c36"},
-    {file = "jaxlib-0.4.23-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:1fdb1b791e3ee17cad44460b3f42c9a61a86910a877229d30bd3654f4463d5a0"},
-    {file = "jaxlib-0.4.23-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:a3de5e061a173f434fd1b88074f1610e4e881ff712ff3be61e655bae2fab8ea0"},
-    {file = "jaxlib-0.4.23-cp310-cp310-manylinux2014_x86_64.whl", hash = "sha256:7275fbe5a489c683c5502603d55e508323cda2f4bd9521aa8383c674fb0ab2f3"},
-    {file = "jaxlib-0.4.23-cp310-cp310-win_amd64.whl", hash = "sha256:f774941542aa8fd866e4c860082aebdd17c34ea35c2a6a74e46631b6fb377a99"},
-    {file = "jaxlib-0.4.23-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:8e12d7e29b3e12d535b24bbbdb6bf9d66cf64926a6a38fdd91d4565f7cc57111"},
-    {file = "jaxlib-0.4.23-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:d646ff9bc0ce0ebb573b676b21fa6db422c2ef6a0d56ccc00db483b29965415b"},
-    {file = "jaxlib-0.4.23-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:22fb2c2b76276d396ddb1edfe41c6d943216f04fa8c00638b16d6c56cad403b8"},
-    {file = "jaxlib-0.4.23-cp311-cp311-manylinux2014_x86_64.whl", hash = "sha256:984766d309b21ca83846503babdfded4e3aef817c670f281092bcbc177c58492"},
-    {file = "jaxlib-0.4.23-cp311-cp311-win_amd64.whl", hash = "sha256:99c345b9e58c158e5fe6c621084aa1fdf7eb9eb9172c27729918d20272124ea8"},
-    {file = "jaxlib-0.4.23-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:505104fe6062b443955288a38547e9872cb6e107d63d9f8540fb10d1c8d8efd0"},
-    {file = "jaxlib-0.4.23-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:278cda29cc7473406093bc3f9fa925a8396063d22a4cd20d7e0ea0d37dcb5039"},
-    {file = "jaxlib-0.4.23-cp312-cp312-manylinux2014_aarch64.whl", hash = "sha256:b33bc2f8a2163801941d4316fad095778fe32f5519d8d146e6e4504e6a82fe7d"},
-    {file = "jaxlib-0.4.23-cp312-cp312-manylinux2014_x86_64.whl", hash = "sha256:a229a2b90a2980dd682a16c373b4ac4493e703a262108f5489e8a4591daaa559"},
-    {file = "jaxlib-0.4.23-cp312-cp312-win_amd64.whl", hash = "sha256:ce7dd9295ccdac6a4739b4a344caa1ea2e555e686216b74313ec7562b00695f0"},
-    {file = "jaxlib-0.4.23-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:4dd538c04a2a121b03ab5f0cb8b12998aaa9539d7ec54629feb799a840c92b55"},
-    {file = "jaxlib-0.4.23-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:81d6f4edcd761c27cae555d3d82fbd958292888a4f803f2c366778786d8ce8ce"},
-    {file = "jaxlib-0.4.23-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:c78d2accacb34da96ccd7fd2a7e87ed3e93ba74af40c2b2b19e09289fe3381cf"},
-    {file = "jaxlib-0.4.23-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:99a37d4732bafe1608b8f45df27f27e6a6bf1f23e001fe940fe9a5ab3675fd77"},
-    {file = "jaxlib-0.4.23-cp39-cp39-win_amd64.whl", hash = "sha256:fdf8920a8b00d3e4574978e799c865615132df75f6579e4eec0c50e105df6c66"},
+    {file = "jaxlib-0.4.14-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:843839faa8ac82d80eaddbdb8f1b14808ef7716e806a1f0d2e384f7b890c02c3"},
+    {file = "jaxlib-0.4.14-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:2dadf061b1828d64e5ee4ac10fa05a051ab2043f11e77d0b7246f3d005afd053"},
+    {file = "jaxlib-0.4.14-cp310-cp310-manylinux2014_x86_64.whl", hash = "sha256:9f2ca54997ea1de7ed96f56025914237595d8e5b99549218bb8652b15c6f5dff"},
+    {file = "jaxlib-0.4.14-cp310-cp310-win_amd64.whl", hash = "sha256:504e478acde687fd3ba8ee0b250fb675e26d92b4063d97435d4ea8c5fec360b3"},
+    {file = "jaxlib-0.4.14-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:fb06229143c586bbd05bc932d76aa78c83895c03a1670e267da39f7bc61223e9"},
+    {file = "jaxlib-0.4.14-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:6b38dae702bb8c1b4b54241bf04acefbada9813e606233e59fbc2a51395f650a"},
+    {file = "jaxlib-0.4.14-cp311-cp311-manylinux2014_x86_64.whl", hash = "sha256:5739b7af01d8765c982fd3e5c462ff3ac63d37d583114df639bdc318deb790cb"},
+    {file = "jaxlib-0.4.14-cp311-cp311-win_amd64.whl", hash = "sha256:b03714c869fb78f1166a8a0371a160dd27fc047bee9cfea39c93ad64a0496e35"},
+    {file = "jaxlib-0.4.14-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:137763b4321a86a84cde4f2ee6f51d74416ca8f7dd79059ebf88403f779829ba"},
+    {file = "jaxlib-0.4.14-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:b934e1dbbe1adf49bdf080197db6681c59c80ad07af5e36968dd69825e79a40e"},
+    {file = "jaxlib-0.4.14-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:aacea888b9de76ea3b001f0952ba7ae88a4e40a7ede302344b305bbc8d2f5cde"},
+    {file = "jaxlib-0.4.14-cp39-cp39-win_amd64.whl", hash = "sha256:fbd3fb60b3a11585e2db58c340f70a1b51a4a37fadc0c77fbe819677ed75ee78"},
 ]
 
 [package.dependencies]
 ml-dtypes = ">=0.2.0"
 numpy = ">=1.22"
-scipy = ">=1.9"
+scipy = ">=1.7"
 
 [package.extras]
 cuda11-pip = ["nvidia-cublas-cu11 (>=11.11)", "nvidia-cuda-cupti-cu11 (>=11.8)", "nvidia-cuda-nvcc-cu11 (>=11.8)", "nvidia-cuda-runtime-cu11 (>=11.8)", "nvidia-cudnn-cu11 (>=8.8)", "nvidia-cufft-cu11 (>=10.9)", "nvidia-cusolver-cu11 (>=11.4)", "nvidia-cusparse-cu11 (>=11.7)"]
 cuda12-pip = ["nvidia-cublas-cu12", "nvidia-cuda-cupti-cu12", "nvidia-cuda-nvcc-cu12", "nvidia-cuda-runtime-cu12", "nvidia-cudnn-cu12 (>=8.9)", "nvidia-cufft-cu12", "nvidia-cusolver-cu12", "nvidia-cusparse-cu12"]
+
+[package.source]
+type = "legacy"
+url = "https://storage.googleapis.com/jax-releases/jax_releases.html"
+reference = "jaxsource"
 
 [[package]]
 name = "jaxlib"
@@ -1583,11 +1705,6 @@ scipy = ">=1.9"
 [package.extras]
 cuda11-pip = ["nvidia-cublas-cu11 (>=11.11)", "nvidia-cuda-cupti-cu11 (>=11.8)", "nvidia-cuda-nvcc-cu11 (>=11.8)", "nvidia-cuda-runtime-cu11 (>=11.8)", "nvidia-cudnn-cu11 (>=8.8)", "nvidia-cufft-cu11 (>=10.9)", "nvidia-cusolver-cu11 (>=11.4)", "nvidia-cusparse-cu11 (>=11.7)"]
 cuda12-pip = ["nvidia-cublas-cu12", "nvidia-cuda-cupti-cu12", "nvidia-cuda-nvcc-cu12", "nvidia-cuda-runtime-cu12", "nvidia-cudnn-cu12 (>=8.9)", "nvidia-cufft-cu12", "nvidia-cusolver-cu12", "nvidia-cusparse-cu12"]
-
-[package.source]
-type = "legacy"
-url = "https://storage.googleapis.com/jax-releases/jax_releases.html"
-reference = "jaxsource"
 
 [[package]]
 name = "jaxtyping"
@@ -5131,10 +5248,10 @@ docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.link
 testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy (>=0.9.1)", "pytest-ruff"]
 
 [extras]
-dev = ["black", "dill", "gdspy", "gdstk", "gdstk", "grcwa", "ipython", "ipython", "jax", "jax", "jax", "jaxlib", "jaxlib", "jaxlib", "jinja2", "jupyter", "memory_profiler", "nbconvert", "nbdime", "nbsphinx", "networkx", "optax", "pre-commit", "pydata-sphinx-theme", "pylint", "pyswarms", "pytest", "pytest-timeout", "rtree", "ruff", "sax", "signac", "sphinx", "sphinx-book-theme", "sphinx-copybutton", "sphinx-sitemap", "sphinx-tabs", "tmm", "tox", "trimesh", "vtk"]
-docs = ["gdstk", "grcwa", "ipython", "jinja2", "jupyter", "nbconvert", "nbdime", "nbsphinx", "optax", "pydata-sphinx-theme", "pylint", "sax", "signac", "sphinx", "sphinx-book-theme", "sphinx-copybutton", "sphinx-sitemap", "sphinx-tabs", "tmm"]
+dev = ["black", "dill", "gdspy", "gdstk", "gdstk", "gdstk", "gdstk", "gdstk", "gdstk", "grcwa", "ipython", "ipython", "jax", "jax", "jax", "jaxlib", "jaxlib", "jaxlib", "jinja2", "jupyter", "memory_profiler", "nbconvert", "nbdime", "nbsphinx", "networkx", "optax", "pre-commit", "pydata-sphinx-theme", "pylint", "pyswarms", "pytest", "pytest-timeout", "rtree", "ruff", "sax", "signac", "sphinx", "sphinx-book-theme", "sphinx-copybutton", "sphinx-sitemap", "sphinx-tabs", "tmm", "tox", "trimesh", "vtk"]
+docs = ["gdstk", "gdstk", "gdstk", "grcwa", "ipython", "jinja2", "jupyter", "nbconvert", "nbdime", "nbsphinx", "optax", "pydata-sphinx-theme", "pylint", "sax", "signac", "sphinx", "sphinx-book-theme", "sphinx-copybutton", "sphinx-sitemap", "sphinx-tabs", "tmm"]
 gdspy = ["gdspy"]
-gdstk = ["gdstk"]
+gdstk = ["gdstk", "gdstk", "gdstk"]
 jax = ["jax", "jax", "jax", "jaxlib", "jaxlib", "jaxlib"]
 trimesh = ["networkx", "rtree", "trimesh"]
 vtk = ["vtk"]
@@ -5142,4 +5259,4 @@ vtk = ["vtk"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "84ae946570c3cd0b0ad5ddde04b979f276e5a3a3e40fd0c9b07dbf304ff82b9f"
+content-hash = "be702dcc5f4c4783ed636162e41b56096fe028ad1a917d2d9a8d8c734f1aa49b"
