@@ -30,6 +30,7 @@ Placement
 
 .. autosummary::
    :toctree: _autosummary/
+   :template: module.rst
 
    tidy3d.StructureStructureInterface
    tidy3d.StructureBoundary
