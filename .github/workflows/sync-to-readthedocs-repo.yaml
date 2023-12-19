@@ -58,6 +58,6 @@ jobs:
         with:
           folder: .
           token: ${{ secrets.GH_PAT }}
-          repository-name: flexcompute-readthedocs/tidy3d-docs-demo
+          repository-name: flexcompute-readthedocs/tidy3d-docs
           target-folder: .
           branch: ${{ needs.set_env.outputs.dest-branch }}
