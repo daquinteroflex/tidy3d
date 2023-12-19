@@ -58,13 +58,22 @@ ipython = {version="*", optional = true}
 gdspy = {version="*", optional = true}
 
 # gdstk
-gdstk = {version="*", optional = true}
+gdstk = [
+    {version="*", optional = true, platform = "linux"},
+    {version="*", optional = true, platform = "win32"},
+    {version="<0.9.38", optional = true, platform = "darwin"},
+]
 
 # jax
 jaxlib = [
-    {version = "^0.4.1", platform = "linux",  source="jaxsource", optional = true},
-    {version = "^0.4.1", platform = "darwin",  source="jaxsource", optional = true},
-    {version = "^0.4.13", platform = "win32", source="jaxsource", optional = true}
+    {version = ">=0.4.1,<=0.4.14", platform = "linux",  source="jaxsource", optional = true},
+    {version = ">=0.4.1,<=0.4.14", platform = "darwin",  source="jaxsource", optional = true},
+    {version = ">=0.4.13,<=0.4.14", platform = "win32", source="jaxsource", optional = true}
+]
+jax = [
+    {version = ">=0.4.1,<=0.4.14", extras = ["cpu"], platform = "linux", source="jaxsource", optional = true},
+    {version = ">=0.4.1,<=0.4.14", extras = ["cpu"], platform = "darwin",  source="jaxsource", optional = true},
+    {version = ">=0.4.13,<=0.4.14", extras = ["cpu"], platform = "win32", source="jaxsource", optional = true}
 ]
 
 jax = [
