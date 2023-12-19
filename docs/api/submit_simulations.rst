@@ -44,5 +44,5 @@ Information Containers
    :toctree: _autosummary/
    :template: module.rst
 
-   tidy3d.web.core.TaskInfo
-   tidy3d.web.core.TaskStatus
+   tidy3d.web.core.task_info.TaskInfo
+   tidy3d.web.core.task_info.TaskStatus
