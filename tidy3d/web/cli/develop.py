@@ -379,10 +379,14 @@ def build_documentation_from_remote_notebooks(args=None):
 
 @develop.command(name="test-base", help="Tests the tidy3d base package.")
 def test_base_tidy3d(args=None):
-    """Verifies and builds the documentation."""
-    # Runs the documentation build from the poetry environment
-    # TODO update generic path management.
     echo_and_run_subprocess(["poetry", "run", "pytest", "-rA", "tests"])
+    return 0
+
+
+@develop.command(name="test-notebooks", help="Tests the tidy3d notebooks.")
+def test_notebooks_tidy3d(args=None):
+    """Tests the tidy3d notebooks."""
+    echo_and_run_subprocess(["poetry", "run", "pytest", "-rA", "tests/full_test_notebooks.py"])
     return 0
 
 
