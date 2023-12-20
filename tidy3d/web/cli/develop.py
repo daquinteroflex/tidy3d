@@ -351,8 +351,7 @@ def commit(message, submodule_path):
 def build_documentation(args=None):
     """Verifies and builds the documentation."""
     # Runs the documentation build from the poetry environment
-    # TODO update generic path management.
-    echo_and_run_subprocess(["poetry", "run", "python", "-m", "sphinx", "docs/", "_docs/"])
+    echo_and_check_subprocess(["poetry", "run", "python", "-m", "sphinx", "docs/", "_docs/"])
     return 0
 
 
@@ -360,10 +359,21 @@ def build_documentation(args=None):
 def build_documentation_pdf(args=None):
     """Verifies and builds the documentation."""
     # Runs the documentation build from the poetry environment
-    # TODO update generic path management.
     echo_and_run_subprocess(
         ["poetry", "run", "python", "-m", "sphinx", "-M", "latexpdf", "docs/", "_pdf/"]
     )
+    return 0
+
+
+@develop.command(
+    name="build-docs-remote-notebooks", help="Updates notebooks submodule and builds documentation."
+)
+def build_documentation_from_remote_notebooks(args=None):
+    """Updates notebooks submodule and builds documentation. Verifies and builds the documentation."""
+    # Runs the documentation build from the poetry environment
+    echo_and_check_subprocess(["git", "submodule", "update", "--remote"])
+    print("Notebook submodule updated from remote.")
+    echo_and_check_subprocess(["poetry", "run", "python", "-m", "sphinx", "docs/", "_docs/"])
     return 0
 
 
@@ -385,4 +395,12 @@ def install_in_poetry(args=None):
     # TODO update generic path management.
     activate_correct_poetry_python()
     echo_and_run_subprocess(["poetry", "install", "-E", "dev"])
+    return 0
+
+
+@develop.command(name="update-notebooks", help="Updates notebooks submodule from remote")
+def update_notebooks_remote(args=None):
+    """Updates notebooks submodule."""
+    # Runs the documentation build from the poetry environment
+    echo_and_check_subprocess(["git", "submodule", "update", "--remote"])
     return 0
