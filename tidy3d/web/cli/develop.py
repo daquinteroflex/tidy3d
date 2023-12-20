@@ -262,13 +262,14 @@ def uninstall_development_environment(args=None):
         exit("Nothing has been uninstalled.")
 
     # Verify and uninstall poetry if required
-    if verify_poetry_is_installed() and verify_pipx_is_installed():
+    if verify_poetry_is_installed():
         if platform.system() == "Windows":
-            echo_and_check_subprocess(["pipx", "uninstall", "poetry"])
+            echo_and_run_subprocess(["pipx", "uninstall", "poetry"])
         elif platform.system() == "Darwin":
-            echo_and_check_subprocess(["pipx", "uninstall", "poetry"])
+            echo_and_run_subprocess(["brew", "uninstall", "poetry"])
+            echo_and_run_subprocess(["pipx", "uninstall", "poetry"])
         elif platform.system() == "Linux":
-            echo_and_check_subprocess(["python3", "-m", "pipx", "uninstall", "poetry"])
+            echo_and_run_subprocess(["python3", "-m", "pipx", "uninstall", "poetry"])
         else:
             raise OSError(
                 "Unsupported operating system installation flow. Verify the subprocess commands in "
@@ -280,14 +281,15 @@ def uninstall_development_environment(args=None):
     # Verify and install pipx if required
     if verify_pipx_is_installed():
         if platform.system() == "Windows":
-            echo_and_check_subprocess(["python", "-m", "pip", "uninstall", "-y", "pipx"])
+            echo_and_run_subprocess(["python", "-m", "pip", "uninstall", "-y", "pipx"])
             # TODO what's the deal here?
         elif platform.system() == "Darwin":
-            echo_and_check_subprocess(["python", "-m", "pip", "uninstall", "-y", "pipx"])
-            echo_and_check_subprocess(["rm", "-rf", "~/.local/pipx"])
+            echo_and_run_subprocess(["brew", "uninstall", "pipx"])
+            echo_and_run_subprocess(["python", "-m", "pip", "uninstall", "-y", "pipx"])
+            echo_and_run_subprocess(["rm", "-rf", "~/.local/pipx"])
         elif platform.system() == "Linux":
-            echo_and_check_subprocess(["python3", "-m", "pip", "uninstall", "-y", "pipx"])
-            echo_and_check_subprocess(["rm", "-rf", "~/.local/pipx"])
+            echo_and_run_subprocess(["python3", "-m", "pip", "uninstall", "-y", "pipx"])
+            echo_and_run_subprocess(["rm", "-rf", "~/.local/pipx"])
         else:
             raise OSError(
                 "Unsupported operating system installation flow. Verify the subprocess commands in "
@@ -337,7 +339,7 @@ def commit(message, submodule_path):
             ["git", "-C", repository_path, "commit", "--no-verify", "-am", commit_message]
         )
 
-    # TODO fix errors when commiting between the two repos.
+    # TODO fix errors when committing between the two repos.
     # Commit to the submodule
     commit_repository(submodule_path, message)
     # Commit to the main repository
