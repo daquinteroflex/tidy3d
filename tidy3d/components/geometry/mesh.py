@@ -8,13 +8,14 @@ import pydantic.v1 as pydantic
 import numpy as np
 
 from ..base import cached_property
-from ..types import Ax, Bound, Coordinate, MatrixReal4x4, Shapely, trimesh, TrimeshType
+from ..types import Ax, Bound, Coordinate, MatrixReal4x4, Shapely, TrimeshType
 from ..viz import add_ax_if_none, equal_aspect
 from ...log import log
 from ...exceptions import ValidationError, DataError
 from ...constants import fp_eps, inf
 from ..data.dataset import TriangleMeshDataset
 from ..data.data_array import TriangleMeshDataArray, DATA_ARRAY_MAP
+from ...packaging import verify_packages_import
 
 from . import base
 
@@ -36,7 +37,7 @@ class TriangleMesh(base.Geometry, ABC):
     )
 
     @pydantic.root_validator(pre=True)
-    @base.requires_trimesh
+    @verify_packages_import(["trimesh"])
     def _validate_trimesh_library(cls, values):
         """Check if the trimesh package is imported as a validator."""
         return values
@@ -80,7 +81,7 @@ class TriangleMesh(base.Geometry, ABC):
         return val
 
     @classmethod
-    @base.requires_trimesh
+    @verify_packages_import(["trimesh"])
     def from_stl(
         cls,
         filename: str,
@@ -114,6 +115,7 @@ class TriangleMesh(base.Geometry, ABC):
         Union[:class:`.TriangleMesh`, :class:`.GeometryGroup`]
             The geometry or geometry group from the file.
         """
+        import trimesh
 
         def process_single(mesh: TrimeshType) -> TriangleMesh:
             """Process a single 'trimesh.Trimesh' using scale and origin."""
@@ -194,7 +196,7 @@ class TriangleMesh(base.Geometry, ABC):
         return TriangleMesh(mesh_dataset=mesh_dataset)
 
     @classmethod
-    @base.requires_trimesh
+    @verify_packages_import(["trimesh"])
     def from_vertices_faces(cls, vertices: np.ndarray, faces: np.ndarray) -> TriangleMesh:
         """Create a :class:`.TriangleMesh` from numpy arrays containing the data
         of a surface mesh. The first array contains the vertices, and the second array contains
@@ -217,6 +219,8 @@ class TriangleMesh(base.Geometry, ABC):
             The custom surface mesh geometry given by the vertices and faces provided.
 
         """
+        import trimesh
+
         vertices = np.array(vertices)
         faces = np.array(faces)
         if len(vertices.shape) != 2 or vertices.shape[1] != 3:
@@ -228,9 +232,11 @@ class TriangleMesh(base.Geometry, ABC):
         return cls.from_triangles(trimesh.Trimesh(vertices, faces).triangles)
 
     @classmethod
-    @base.requires_trimesh
+    @verify_packages_import(["trimesh"])
     def _triangles_to_trimesh(cls, triangles: np.ndarray) -> TrimeshType:
         """Convert an (N, 3, 3) numpy array of triangles to a ``trimesh.Trimesh``."""
+        import trimesh
+
         return trimesh.Trimesh(**trimesh.triangles.to_kwargs(triangles))
 
     @cached_property
