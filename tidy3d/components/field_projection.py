@@ -17,7 +17,7 @@ from .data.sim_data import SimulationData
 from .monitor import FieldProjectionSurface
 from .monitor import FieldMonitor, AbstractFieldProjectionMonitor, FieldProjectionAngleMonitor
 from .monitor import FieldProjectionCartesianMonitor, FieldProjectionKSpaceMonitor
-from .types import Direction, Coordinate, ArrayComplex4D
+from .types_core import Direction, Coordinate, ArrayComplex4D
 from .medium import MediumType
 from .base import Tidy3dBaseModel, cached_property, skip_if_fields_missing
 from ..exceptions import SetupError

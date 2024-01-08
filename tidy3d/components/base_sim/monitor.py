@@ -5,8 +5,8 @@ from typing import Tuple
 import pydantic.v1 as pd
 import numpy as np
 
-from ..types import ArrayFloat1D, Numpy
-from ..types import Axis
+from ..types_core import ArrayFloat1D, Numpy
+from ..types_core import Axis
 from ..geometry.base import Box
 from ..base import cached_property
 from ..viz import PlotParams, plot_params_monitor

@@ -14,9 +14,9 @@ import shapely
 from matplotlib import patches
 
 from ..base import Tidy3dBaseModel, cached_property
-from ..types import Ax, Axis, PlanePosition, Shapely, ClipOperationType, annotate_type
-from ..types import Bound, Size, Coordinate, Coordinate2D
-from ..types import ArrayFloat2D, ArrayFloat3D, MatrixReal4x4
+from ..types_core import Ax, Axis, PlanePosition, Shapely, ClipOperationType, annotate_type
+from ..types_core import Bound, Size, Coordinate, Coordinate2D
+from ..types_core import ArrayFloat2D, ArrayFloat3D, MatrixReal4x4
 from ..viz import add_ax_if_none, equal_aspect, PLOT_BUFFER, ARROW_LENGTH
 from ..viz import PlotParams, plot_params_geometry, polygon_patch, arrow_style
 from ..transformation import RotationAroundAxis

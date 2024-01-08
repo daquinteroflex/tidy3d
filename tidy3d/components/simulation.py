@@ -17,7 +17,7 @@ from .geometry.primitives import Cylinder
 from .geometry.mesh import TriangleMesh
 from .geometry.polyslab import PolySlab
 from .geometry.utils import flatten_groups, traverse_geometries
-from .types import Ax, FreqBound, Axis, annotate_type, InterpMethod
+from .types_core import Ax, FreqBound, Axis, annotate_type, InterpMethod
 from .grid.grid import Coords1D, Grid, Coords
 from .grid.grid_spec import GridSpec, UniformGrid, AutoGrid
 from .medium import Medium, MediumType, AbstractMedium

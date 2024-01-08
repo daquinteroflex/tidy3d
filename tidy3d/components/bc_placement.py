@@ -6,7 +6,7 @@ from typing import Union, Tuple
 
 import pydantic.v1 as pd
 
-from .types import BoxSurface
+from .types_core import BoxSurface
 from .base import Tidy3dBaseModel
 from ..exceptions import SetupError
 

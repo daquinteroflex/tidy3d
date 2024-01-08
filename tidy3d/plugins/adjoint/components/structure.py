@@ -11,7 +11,7 @@ from ....constants import C_0
 from ....components.structure import Structure
 from ....components.monitor import FieldMonitor
 from ....components.data.monitor_data import FieldData, PermittivityData
-from ....components.types import Bound, TYPE_TAG_STR
+from ....components.types_core import Bound, TYPE_TAG_STR
 from ....components.medium import MediumType
 from ....components.geometry.utils import GeometryType
 

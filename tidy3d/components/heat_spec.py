@@ -5,7 +5,7 @@ from abc import ABC
 
 import pydantic.v1 as pd
 
-from .types import Union
+from .types_core import Union
 from .base import Tidy3dBaseModel
 from ..constants import SPECIFIC_HEAT_CAPACITY, THERMAL_CONDUCTIVITY
 

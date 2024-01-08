@@ -8,7 +8,7 @@ import pydantic.v1 as pd
 import numpy as np
 
 from .base import Tidy3dBaseModel, cached_property
-from .types import Coordinate, TensorReal, ArrayFloat2D, Axis
+from .types_core import Coordinate, TensorReal, ArrayFloat2D, Axis
 from ..constants import RADIAN
 from ..exceptions import ValidationError
 

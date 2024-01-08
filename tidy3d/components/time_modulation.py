@@ -9,7 +9,7 @@ import pydantic.v1 as pd
 import numpy as np
 
 from .base import Tidy3dBaseModel, cached_property, skip_if_fields_missing
-from .types import InterpMethod
+from .types_core import InterpMethod
 from .time import AbstractTimeDependence
 from .data.data_array import SpatialDataArray
 from ..exceptions import ValidationError

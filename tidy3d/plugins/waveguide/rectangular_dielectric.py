@@ -17,8 +17,8 @@ from ...components.simulation import Simulation
 
 from ...components.source import ModeSource, GaussianPulse
 from ...components.structure import Structure
-from ...components.types import ArrayFloat1D, Ax, Axis, Coordinate, Literal, Size1D, Union
-from ...components.types import TYPE_TAG_STR
+from ...components.types_core import ArrayFloat1D, Ax, Axis, Coordinate, Literal, Size1D, Union
+from ...components.types_core import TYPE_TAG_STR
 from ...constants import C_0, inf, MICROMETER, RADIAN
 from ...exceptions import Tidy3dError, ValidationError
 from ...log import log

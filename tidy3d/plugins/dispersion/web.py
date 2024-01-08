@@ -11,7 +11,7 @@ from pydantic.v1 import PositiveInt, NonNegativeFloat, PositiveFloat, Field, val
 
 from ...log import log
 from ...components.base import Tidy3dBaseModel, skip_if_fields_missing
-from ...components.types import Literal
+from ...components.types_core import Literal
 from ...components.medium import PoleResidue
 from ...constants import MICROMETER, HERTZ
 from ...exceptions import WebError, Tidy3dError, SetupError

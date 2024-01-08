@@ -16,7 +16,7 @@ from ...components.base import Tidy3dBaseModel, cached_property
 from ...components.base import skip_if_fields_missing
 from ...components.medium import PoleResidue, AbstractMedium
 from ...components.viz import add_ax_if_none
-from ...components.types import Ax, ArrayFloat1D
+from ...components.types_core import Ax, ArrayFloat1D
 from ...constants import C_0, HBAR, MICROMETER
 from ...exceptions import ValidationError, WebError, SetupError
 from tidy3d.web.core.environment import Env

@@ -10,7 +10,7 @@ import pydantic.v1 as pd
 from .grid import Coords1D, Coords, Grid
 from .mesher import GradedMesher, MesherType
 from ..base import Tidy3dBaseModel
-from ..types import Axis, Symmetry, annotate_type, TYPE_TAG_STR
+from ..types_core import Axis, Symmetry, annotate_type, TYPE_TAG_STR
 from ..source import SourceType
 from ..structure import Structure, StructureType
 from ..geometry.base import Box

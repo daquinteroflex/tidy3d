@@ -5,7 +5,7 @@ from math import isclose
 
 import numpy as np
 
-from ..types import Axis, PlanePosition, Shapely, ArrayFloat2D, MatrixReal4x4
+from ..types_core import Axis, PlanePosition, Shapely, ArrayFloat2D, MatrixReal4x4
 from ...exceptions import Tidy3dError
 
 from . import base

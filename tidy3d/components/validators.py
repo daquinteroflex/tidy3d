@@ -7,7 +7,7 @@ from .geometry.base import Box
 from ..exceptions import ValidationError, SetupError
 from .data.dataset import Dataset, FieldDataset
 from .base import DATA_ARRAY_MAP, skip_if_fields_missing
-from .types import Tuple
+from .types_core import Tuple
 from ..log import log
 
 """ Explanation of pydantic validators:

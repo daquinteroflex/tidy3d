@@ -13,7 +13,7 @@ from .base import cached_property, Tidy3dBaseModel
 from .validators import assert_unique_names
 from .geometry.base import Box, GeometryGroup, ClipOperation
 from .geometry.utils import flatten_groups, traverse_geometries
-from .types import Ax, Shapely, TYPE_TAG_STR, Bound, Size, Coordinate, InterpMethod
+from .types_core import Ax, Shapely, TYPE_TAG_STR, Bound, Size, Coordinate, InterpMethod
 from .medium import Medium, MediumType
 from .medium import AbstractCustomMedium, Medium2D, MediumType3D
 from .medium import AbstractPerturbationMedium

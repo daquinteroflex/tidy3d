@@ -19,8 +19,8 @@ from ...components.mode import ModeSpec
 from ...components.monitor import ModeSolverMonitor, ModeMonitor
 from ...components.medium import FullyAnisotropicMedium
 from ...components.source import ModeSource, SourceTime
-from ...components.types import Direction, FreqArray, Ax, Literal, Axis, Symmetry, PlotScale
-from ...components.types import ArrayComplex3D, ArrayComplex4D, ArrayFloat1D, EpsSpecType
+from ...components.types_core import Direction, FreqArray, Ax, Literal, Axis, Symmetry, PlotScale
+from ...components.types_core import ArrayComplex3D, ArrayComplex4D, ArrayFloat1D, EpsSpecType
 from ...components.data.data_array import ModeIndexDataArray, ScalarModeFieldDataArray
 from ...components.data.data_array import FreqModeDataArray
 from ...components.data.sim_data import SimulationData

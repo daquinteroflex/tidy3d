@@ -15,7 +15,7 @@ from ...components.monitor import ModeMonitor
 from ...components.source import ModeSource, GaussianPulse
 from ...components.data.sim_data import SimulationData
 from ...components.data.data_array import DataArray
-from ...components.types import Direction, Ax, Complex, FreqArray
+from ...components.types_core import Direction, Ax, Complex, FreqArray
 from ...components.viz import add_ax_if_none, equal_aspect
 from ...components.base import Tidy3dBaseModel, cached_property
 from ...exceptions import SetupError, Tidy3dKeyError

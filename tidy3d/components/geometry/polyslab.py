@@ -12,8 +12,8 @@ from matplotlib import path
 
 from ..base import cached_property
 from ..base import skip_if_fields_missing
-from ..types import Axis, Bound, PlanePosition, ArrayFloat2D, Coordinate
-from ..types import MatrixReal4x4, Shapely
+from ..types_core import Axis, Bound, PlanePosition, ArrayFloat2D, Coordinate
+from ..types_core import MatrixReal4x4, Shapely
 from ...log import log
 from ...exceptions import SetupError, ValidationError
 from ...constants import MICROMETER, fp_eps

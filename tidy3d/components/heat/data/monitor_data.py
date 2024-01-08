@@ -11,7 +11,7 @@ from ...base import skip_if_fields_missing
 from ...base_sim.data.monitor_data import AbstractMonitorData
 from ...data.data_array import SpatialDataArray
 from ...data.dataset import TriangularGridDataset, TetrahedralGridDataset
-from ...types import ScalarSymmetry, Coordinate, annotate_type
+from ...types_core import ScalarSymmetry, Coordinate, annotate_type
 from ....constants import KELVIN
 
 from ....log import log

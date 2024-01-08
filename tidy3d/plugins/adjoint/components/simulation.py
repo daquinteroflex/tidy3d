@@ -16,7 +16,7 @@ from ....components.monitor import ModeMonitor, DiffractionMonitor, Monitor
 from ....components.simulation import Simulation
 from ....components.data.monitor_data import FieldData, PermittivityData
 from ....components.structure import Structure
-from ....components.types import Ax, annotate_type
+from ....components.types_core import Ax, annotate_type
 from ....constants import HERTZ, SECOND
 from ....exceptions import AdjointError
 

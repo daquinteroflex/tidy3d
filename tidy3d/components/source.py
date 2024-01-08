@@ -12,8 +12,8 @@ import numpy as np
 from .base import cached_property, skip_if_fields_missing
 from .base_sim.source import AbstractSource
 from .time import AbstractTimeDependence
-from .types import Coordinate, Direction, Polarization, Ax, FreqBound
-from .types import ArrayFloat1D, Axis, PlotVal, ArrayComplex1D, TYPE_TAG_STR
+from .types_core import Coordinate, Direction, Polarization, Ax, FreqBound
+from .types_core import ArrayFloat1D, Axis, PlotVal, ArrayComplex1D, TYPE_TAG_STR
 from .validators import assert_plane, assert_volumetric
 from .validators import warn_if_dataset_none, assert_single_freq_in_range, _assert_min_freq
 from .data.dataset import FieldDataset, TimeDataset

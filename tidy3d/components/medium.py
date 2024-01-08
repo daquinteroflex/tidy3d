@@ -13,9 +13,9 @@ import xarray as xr
 from .base import Tidy3dBaseModel, cached_property
 from .base import skip_if_fields_missing
 from .grid.grid import Coords, Grid
-from .types import PoleAndResidue, Ax, FreqBound, TYPE_TAG_STR
-from .types import InterpMethod, Bound, ArrayComplex3D, ArrayFloat1D
-from .types import Axis, TensorReal, Complex
+from .types_core import PoleAndResidue, Ax, FreqBound, TYPE_TAG_STR
+from .types_core import InterpMethod, Bound, ArrayComplex3D, ArrayFloat1D
+from .types_core import Axis, TensorReal, Complex
 from .data.dataset import PermittivityDataset
 from .data.data_array import SpatialDataArray, ScalarFieldDataArray, DATA_ARRAY_MAP
 from .viz import add_ax_if_none

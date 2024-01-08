@@ -12,7 +12,7 @@ from .monitor import AbstractMonitor
 from ..base import cached_property, skip_if_fields_missing
 from ..validators import assert_unique_names, assert_objects_in_sim_bounds
 from ..geometry.base import Box
-from ..types import Ax, Bound, Axis, Symmetry, TYPE_TAG_STR
+from ..types_core import Ax, Bound, Axis, Symmetry, TYPE_TAG_STR
 from ..structure import Structure
 from ..viz import add_ax_if_none, equal_aspect
 from ..scene import Scene

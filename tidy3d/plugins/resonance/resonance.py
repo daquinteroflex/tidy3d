@@ -12,7 +12,7 @@ from pydantic.v1 import Field, NonNegativeFloat, PositiveInt, validator
 
 from ...log import log
 from ...components.base import Tidy3dBaseModel
-from ...components.types import ArrayFloat1D, ArrayComplex1D, ArrayComplex2D, ArrayComplex3D
+from ...components.types_core import ArrayFloat1D, ArrayComplex1D, ArrayComplex2D, ArrayComplex3D
 from ...components.data.data_array import ScalarFieldTimeDataArray
 from ...components.data.monitor_data import FieldTimeData
 from ...constants import HERTZ

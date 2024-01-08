@@ -5,8 +5,8 @@ from typing import Union, Tuple
 import pydantic.v1 as pydantic
 import numpy as np
 
-from .types import Ax, EMField, ArrayFloat1D, FreqArray, FreqBound, Bound, Size
-from .types import Literal, Direction, Coordinate, Axis, ObsGridArray, BoxSurface
+from .types_core import Ax, EMField, ArrayFloat1D, FreqArray, FreqBound, Bound, Size
+from .types_core import Literal, Direction, Coordinate, Axis, ObsGridArray, BoxSurface
 from .validators import assert_plane, validate_freqs_not_empty, validate_freqs_min
 from .base import cached_property, Tidy3dBaseModel, skip_if_fields_missing
 from .mode import ModeSpec

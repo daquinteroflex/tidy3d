@@ -4,7 +4,7 @@ from dataclasses import dataclass
 import numpy as np
 import shapely
 
-from ..types import ArrayFloat1D, ArrayFloat2D
+from ..types_core import ArrayFloat1D, ArrayFloat2D
 
 
 @dataclass

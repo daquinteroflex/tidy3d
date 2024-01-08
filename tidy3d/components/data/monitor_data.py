@@ -21,8 +21,8 @@ from .data_array import FreqDataArray, TimeDataArray, FreqModeDataArray
 from .dataset import Dataset, AbstractFieldDataset, ElectromagneticFieldDataset
 from .dataset import FieldDataset, FieldTimeDataset, ModeSolverDataset, PermittivityDataset
 from ..base import TYPE_TAG_STR, cached_property, skip_if_fields_missing
-from ..types import Coordinate, Symmetry, ArrayFloat1D, ArrayFloat2D, Size, Numpy, TrackFreq
-from ..types import EpsSpecType, Literal
+from ..types_core import Coordinate, Symmetry, ArrayFloat1D, ArrayFloat2D, Size, Numpy, TrackFreq
+from ..types_core import EpsSpecType, Literal
 from ..grid.grid import Grid, Coords
 from ..validators import enforce_monitor_fields_present, required_if_symmetry_present
 from ..monitor import MonitorType, FieldMonitor, FieldTimeMonitor, ModeSolverMonitor

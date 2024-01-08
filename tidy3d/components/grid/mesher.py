@@ -14,7 +14,7 @@ from shapely.geometry import box as shapely_box
 from shapely.errors import ShapelyDeprecationWarning
 
 from ..base import Tidy3dBaseModel
-from ..types import Axis, ArrayFloat1D
+from ..types_core import Axis, ArrayFloat1D
 from ..structure import Structure, MeshOverrideStructure, StructureType
 from ..medium import AnisotropicMedium, Medium2D, PECMedium
 from ...exceptions import SetupError, ValidationError

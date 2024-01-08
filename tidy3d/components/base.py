@@ -19,7 +19,7 @@ import numpy as np
 import h5py
 import xarray as xr
 
-from .types import ComplexNumber, Literal, TYPE_TAG_STR
+from .types_core import ComplexNumber, Literal, TYPE_TAG_STR
 from .data.data_array import DataArray, DATA_ARRAY_MAP
 from .file_util import compress_file_to_gzip, extract_gzip_file
 from ..exceptions import FileError

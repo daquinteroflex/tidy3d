@@ -1,6 +1,6 @@
 """ Defines 'types' that various fields can be """
 
-from typing import Tuple, Union, Any
+from typing import Tuple, Union
 
 
 # Literal only available in python 3.8 + so try import otherwise use extensions
@@ -15,8 +15,6 @@ import numpy as np
 from matplotlib.axes import Axes
 from shapely.geometry.base import BaseGeometry
 from ..exceptions import ValidationError
-from ..packaging import check_import
-
 
 # type tag default name
 TYPE_TAG_STR = "type"
@@ -199,14 +197,6 @@ PlanePosition = Literal["bottom", "middle", "top"]
 ClipOperationType = Literal["union", "intersection", "difference", "symmetric_difference"]
 BoxSurface = Literal["x-", "x+", "y-", "y+", "z-", "z+"]
 
-# TODO Complicated as trimesh should be a core package unless decoupled implementation types in functional location.
-#  We need to restructure.
-if check_import("trimesh"):
-    import trimesh  # Won't add much overhead if already imported
-
-    TrimeshType = trimesh.Trimesh
-else:
-    TrimeshType = Any
 
 """ medium """
 

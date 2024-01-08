@@ -9,7 +9,7 @@ import numpy as np
 import shapely
 
 from ..base import cached_property, skip_if_fields_missing
-from ..types import Axis, Bound, Coordinate, MatrixReal4x4, Shapely
+from ..types_core import Axis, Bound, Coordinate, MatrixReal4x4, Shapely
 from ...exceptions import SetupError, ValidationError
 from ...constants import MICROMETER, LARGE_NUMBER
 from ...packaging import verify_packages_import

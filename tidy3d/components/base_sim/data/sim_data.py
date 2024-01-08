@@ -13,7 +13,7 @@ from ..simulation import AbstractSimulation
 from ...data.dataset import UnstructuredGridDatasetType
 from ...base import Tidy3dBaseModel
 from ...base import skip_if_fields_missing
-from ...types import FieldVal
+from ...types_core import FieldVal
 from ....exceptions import DataError, Tidy3dKeyError, ValidationError
 
 

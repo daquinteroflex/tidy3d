@@ -16,7 +16,7 @@ from .viz import plot_params_heat_bc, plot_params_heat_source, HEAT_SOURCE_CMAP
 
 from ..base_sim.simulation import AbstractSimulation
 from ..base import cached_property, skip_if_fields_missing
-from ..types import Ax, Shapely, TYPE_TAG_STR, ScalarSymmetry, Bound
+from ..types_core import Ax, Shapely, TYPE_TAG_STR, ScalarSymmetry, Bound
 from ..viz import add_ax_if_none, equal_aspect, PlotParams
 from ..structure import Structure
 from ..geometry.base import Box, GeometryGroup

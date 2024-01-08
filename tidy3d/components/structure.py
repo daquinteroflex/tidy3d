@@ -7,7 +7,7 @@ from .base import Tidy3dBaseModel, skip_if_fields_missing
 from .validators import validate_name_str
 from .geometry.utils import GeometryType, validate_no_transformed_polyslabs
 from .medium import MediumType, AbstractCustomMedium, Medium2D
-from .types import Ax, TYPE_TAG_STR, Axis
+from .types_core import Ax, TYPE_TAG_STR, Axis
 from .viz import add_ax_if_none, equal_aspect
 from .grid.grid import Coords
 from ..constants import MICROMETER

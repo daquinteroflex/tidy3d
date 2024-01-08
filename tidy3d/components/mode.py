@@ -8,7 +8,7 @@ import numpy as np
 
 from ..constants import MICROMETER, RADIAN, GLANCING_CUTOFF, fp_eps
 from .base import Tidy3dBaseModel, skip_if_fields_missing
-from .types import Axis2D, Literal, TrackFreq
+from .types_core import Axis2D, Literal, TrackFreq
 from ..log import log
 from ..exceptions import SetupError, ValidationError
 

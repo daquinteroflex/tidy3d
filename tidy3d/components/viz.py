@@ -12,7 +12,7 @@ from matplotlib.path import Path
 from numpy import array, concatenate, ones, inf
 import pydantic.v1 as pd
 
-from .types import Ax
+from .types_core import Ax
 from .base import Tidy3dBaseModel
 from ..exceptions import SetupError
 

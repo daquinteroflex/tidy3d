@@ -4,7 +4,7 @@ import numpy as np
 
 import tidy3d as td
 from tidy3d.components.grid.grid import Coords, FieldGrid, Grid
-from tidy3d.components.types import TYPE_TAG_STR
+from tidy3d.components.types_core import TYPE_TAG_STR
 from tidy3d.exceptions import SetupError
 
 

@@ -16,7 +16,7 @@ from ...constants import (
     WATT,
 )
 from ...exceptions import DataError, FileError
-from ..types import Bound, Axis
+from ..types_core import Bound, Axis
 
 # maps the dimension names to their attributes
 DIM_ATTRS = {

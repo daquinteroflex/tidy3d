@@ -7,7 +7,7 @@ import pydantic.v1 as pd
 
 from ..base import Tidy3dBaseModel
 from ..data.data_array import DataArray, SpatialDataArray, ScalarFieldDataArray
-from ..types import ArrayFloat1D, Axis, TYPE_TAG_STR, InterpMethod, Literal
+from ..types_core import ArrayFloat1D, Axis, TYPE_TAG_STR, InterpMethod, Literal
 from ..geometry.base import Box
 
 from ...exceptions import SetupError

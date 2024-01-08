@@ -12,7 +12,7 @@ from jax.tree_util import register_pytree_node_class
 import jax
 
 from ....components.base import cached_property
-from ....components.types import Bound, Coordinate2D  # , annotate_type
+from ....components.types_core import Bound, Coordinate2D  # , annotate_type
 from ....components.geometry.base import Geometry, Box, GeometryGroup
 from ....components.geometry.polyslab import PolySlab
 from ....components.data.monitor_data import FieldData, PermittivityData

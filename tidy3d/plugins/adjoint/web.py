@@ -14,7 +14,7 @@ from tidy3d.web.api.webapi import wait_for_connection
 from tidy3d.web.core.s3utils import download_file, upload_file
 from tidy3d.web.api.asynchronous import run_async as web_run_async
 from ...web.api.container import BatchData, DEFAULT_DATA_DIR, Job, Batch
-from ...components.types import Literal
+from ...components.types_core import Literal
 
 from .components.base import JaxObject
 from .components.simulation import JaxSimulation, JaxInfo

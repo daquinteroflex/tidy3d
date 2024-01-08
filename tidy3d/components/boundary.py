@@ -8,7 +8,7 @@ import pydantic.v1 as pd
 import numpy as np
 
 from .base import Tidy3dBaseModel, cached_property
-from .types import Complex, Axis, TYPE_TAG_STR
+from .types_core import Complex, Axis, TYPE_TAG_STR
 from .source import GaussianBeam, ModeSource, PlaneWave, TFSF
 from .medium import Medium
 

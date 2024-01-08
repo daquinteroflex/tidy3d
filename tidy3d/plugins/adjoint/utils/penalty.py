@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 import jax.numpy as jnp
 
 from ....components.base import Tidy3dBaseModel
-from ....components.types import ArrayFloat2D
+from ....components.types_core import ArrayFloat2D
 
 # Radius of Curvature Calculation
 

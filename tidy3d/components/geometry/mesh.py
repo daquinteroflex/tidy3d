@@ -8,7 +8,7 @@ import pydantic.v1 as pydantic
 import numpy as np
 
 from ..base import cached_property
-from ..types import Ax, Bound, Coordinate, MatrixReal4x4, Shapely, TrimeshType
+from ..types_core import Ax, Bound, Coordinate, MatrixReal4x4, Shapely
 from ..viz import add_ax_if_none, equal_aspect
 from ...log import log
 from ...exceptions import ValidationError, DataError
@@ -116,6 +116,7 @@ class TriangleMesh(base.Geometry, ABC):
             The geometry or geometry group from the file.
         """
         import trimesh
+        from ..types_extra import TrimeshType
 
         def process_single(mesh: TrimeshType) -> TriangleMesh:
             """Process a single 'trimesh.Trimesh' using scale and origin."""
@@ -147,7 +148,8 @@ class TriangleMesh(base.Geometry, ABC):
         raise ValidationError("No solid found at 'solid_index' in the stl file.")
 
     @classmethod
-    def from_trimesh(cls, mesh: TrimeshType) -> TriangleMesh:
+    @verify_packages_import(["trimesh"])
+    def from_trimesh(cls, mesh: trimesh.Trimesh) -> TriangleMesh:
         """Create a :class:`.TriangleMesh` from a ``trimesh.Trimesh`` object.
 
         Parameters
@@ -233,14 +235,19 @@ class TriangleMesh(base.Geometry, ABC):
 
     @classmethod
     @verify_packages_import(["trimesh"])
-    def _triangles_to_trimesh(cls, triangles: np.ndarray) -> TrimeshType:
+    def _triangles_to_trimesh(
+        cls, triangles: np.ndarray
+    ):  # -> TrimeshType: We need to get this out of the classes and into functional methods operating on a class (maybe still referenced to the class)
         """Convert an (N, 3, 3) numpy array of triangles to a ``trimesh.Trimesh``."""
         import trimesh
 
         return trimesh.Trimesh(**trimesh.triangles.to_kwargs(triangles))
 
     @cached_property
-    def trimesh(self) -> TrimeshType:
+    @verify_packages_import(["trimesh"])
+    def trimesh(
+        self,
+    ):  # -> TrimeshType: We need to get this out of the classes and into functional methods operating on a class (maybe still referenced to the class)
         """A ``trimesh.Trimesh`` object representing the custom surface mesh geometry."""
         return self._triangles_to_trimesh(self.triangles)
 
