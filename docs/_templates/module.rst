@@ -3,9 +3,11 @@
 
 .. autoclass:: {{ fullname }}
    :members:
+   :inherited-members:
    :show-inheritance:
    :undoc-members:
    :member-order: bysource
+   :exclude-members: Config
 
    {% block attributes %}
    {% if attributes %}
