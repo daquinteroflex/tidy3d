@@ -34,3 +34,8 @@
        {%- endfor %}
        {% endif %}
        {% endblock %}
+
+
+   .. rubric:: Common
+
+   .. include:: ../_custom_autosummary/{{ fullname }}.rst
