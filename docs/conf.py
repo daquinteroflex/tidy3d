@@ -24,6 +24,11 @@ import sys
 import subprocess
 import tidy3d
 
+import sphinx.ext.autodoc
+import sphinx.ext.autodoc.importer
+import sphinx.pycode
+import sphinx.util.inspect
+
 # import sphinxcontrib.divparams as divparams
 
 full_build = True
@@ -64,8 +69,14 @@ autodoc_class_signature = "separated"
 autodoc_default_options = {
     "members": True,
     "member-order": "bysource",
-    "special-members": "__init__",
     "undoc-members": True,
+    "exclude-members": "Config,__abs__,__add__,__and__,__dir__,__eq__,__floordiv__,__ge__,__get_validators__,__gt__,"
+    "__hash__,__iadd__,__iand__,__ifloordiv__,__ilshift__,__imod__,__imul__,__init_subclass__,"
+    "__invert__,__iter__,__ior__,__ipow__,__irshift__,__isub__,__ixor__,__itruediv__,__le__,"
+    "__lshift__,__lt__,__mod__,__modify_schema__,__mul__,__neg__,__or__,__pos__,__pow__,"
+    "__pretty__,__radd__,__rand__,__rfloordiv__,__repr_name__,__rich_repr__,__rmod__,__rmul__,"
+    "__ror__,__rpow__,__rshift__,__rsub__,__rtruediv__,__rxor__,__setattr__,__sub__,__truediv__,"
+    "__try_update_forward_refs__,__xor__",
 }
 autodoc_typehints = "none"
 ## TODO DEBATE KEEP
@@ -94,6 +105,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",  # Add a link to the Python source code for classes, functions etc.
     "sphinx_copybutton",
+    "sphinx_favicon",
     "sphinx_sitemap",
     "sphinx_tabs.tabs",
     "sphinxemoji.sphinxemoji",
@@ -102,6 +114,12 @@ extensions = [
     "custom-robots",  # In _ext, these need to be at the end of the extensions list
 ]
 extlinks = {}
+favicons = [
+    {
+        "sizes": "16x16",
+        "href": "logo.svg",
+    }
+]
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass
 # [howto, manual, or own class]).
@@ -114,7 +132,6 @@ html_css_files = [
     "css/custom.css",
 ]
 html_extra_path = ["./_static/robots.txt", "./_static/"]
-html_favicon = "_static/logo.ico"
 html_js_files = ["js/custom-download.js"]
 htmlhelp_basename = "tidy3ddoc"
 html_show_sourcelink = True  # Remove 'view source code' from top of page (for html, not python)
@@ -217,6 +234,56 @@ latex_elements = {
     \usepackage{cmap}
     """
 }
+
+
+# Hack `get_class_members()` usage in `sphinx.ext.autodoc` to watch out what is going on
+# and work it around.
+def get_class_members(subject, objpath, attrgetter, inherit_docstrings=True):
+    members = sphinx.ext.autodoc.importer.get_class_members(
+        subject, objpath, attrgetter, inherit_docstrings=inherit_docstrings
+    )
+
+    # ==========
+    # Workaround for [sphinx#11387](https://github.com/sphinx-doc/sphinx/issues/11387):
+    for mro_class in sphinx.util.inspect.getmro(subject):  # type: type
+        # Don't proceed with builtin superclasses.
+        if mro_class.__module__ == "builtins":
+            continue
+
+        # Inspired from `sphinx.ext.autodoc.importer.get_class_members()`.
+        analyzer = sphinx.pycode.ModuleAnalyzer.for_module(mro_class.__module__)
+        analyzer.analyze()
+        for (ns, name), docstring in analyzer.attr_docs.items():
+            if (
+                # Is the attribute name of those described in `members`?
+                (name in members)
+                # Is the given attribute actually part of `_mro_class`?
+                and (ns == mro_class.__qualname__)
+                # Is it the same docstring? If not, the attribute may have been redefined, with a different documentation normally.
+                and (members[name].docstring == "\n".join(docstring))
+                # Is it really new information? If not, no need to log anything.
+                and (members[name].class_ is not mro_class)
+            ):
+                print(
+                    f"Fixing definition class for {subject.__qualname__}.{name} from {members[name].class_!r} to {mro_class!r}"
+                )
+                members[name].class_ = mro_class
+    # ==========
+
+    for name in members:
+        if name in ("foo1", "foo2", "bar1", "bar2"):
+            print(
+                f"{subject.__qualname__}.{name} = {members[name]!r}, class_={members[name].class_!r}"
+            )
+    if hasattr(subject, "__annotations__"):
+        print(f"{subject.__qualname__}.__annotations__={subject.__annotations__!r}")
+    else:
+        print(f"No annotations for {subject.__qualname__}")
+
+    return members
+
+
+sphinx.ext.autodoc.get_class_members = get_class_members
 # latex_elements: dict = {
 #     # "preamble": r"\usepackage{bm}\n\usepackage{amssymb}\n\usepackage{esint}",
 #     # The paper size ('letterpaper' or 'a4paper').
