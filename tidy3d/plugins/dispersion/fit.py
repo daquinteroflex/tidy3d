@@ -14,7 +14,7 @@ from pydantic.v1 import Field, validator
 from ...log import log, get_logging_console
 from ...components.base import Tidy3dBaseModel, cached_property
 from ...components.base import skip_if_fields_missing
-from ...components.medium import PoleResidue, AbstractMedium
+from tidy3d.components.solvers.em.medium import PoleResidue, AbstractMedium
 from ...components.viz import add_ax_if_none
 from ...components.types import Ax, ArrayFloat1D
 from ...constants import C_0, HBAR, MICROMETER

@@ -9,46 +9,85 @@ import xarray as xr
 import matplotlib as mpl
 import math
 
-from .base import cached_property
-from .base import skip_if_fields_missing
-from .validators import assert_objects_in_sim_bounds
-from .validators import validate_mode_objects_symmetry
-from .geometry.base import Geometry, Box
-from .geometry.mesh import TriangleMesh
-from .geometry.utils import flatten_groups, traverse_geometries
-from .geometry.utils_2d import get_bounds, increment_float, set_bounds, get_thickened_geom
-from .geometry.utils_2d import subdivide, snap_coordinate_to_grid
-from .types import Ax, FreqBound, Axis, annotate_type, InterpMethod, Symmetry
-from .types import Literal, TYPE_TAG_STR
-from .grid.grid import Coords1D, Grid, Coords
-from .grid.grid_spec import GridSpec, UniformGrid, AutoGrid, CustomGrid
-from .grid.grid_spec import ConformalMeshSpecType, StaircasingConformalMeshSpec
-from .medium import MediumType, AbstractMedium
-from .medium import AbstractCustomMedium, Medium, Medium2D, MediumType3D
-from .medium import AnisotropicMedium, FullyAnisotropicMedium, AbstractPerturbationMedium
-from .boundary import BoundarySpec, BlochBoundary, PECBoundary, PMCBoundary, Periodic, Boundary
-from .boundary import PML, StablePML, Absorber, AbsorberSpec
-from .structure import Structure, MeshOverrideStructure
-from .source import SourceType, PlaneWave, GaussianBeam, AstigmaticGaussianBeam, CustomFieldSource
-from .source import CustomCurrentSource, CustomSourceTime, ContinuousWave
-from .source import TFSF, Source, ModeSource
-from .monitor import MonitorType, Monitor, FreqMonitor, SurfaceIntegrationMonitor
-from .monitor import AbstractModeMonitor, FieldMonitor, TimeMonitor, FieldTimeMonitor
-from .monitor import PermittivityMonitor, DiffractionMonitor, AbstractFieldProjectionMonitor
-from .monitor import FieldProjectionAngleMonitor, FieldProjectionKSpaceMonitor
-from .lumped_element import LumpedElementType, LumpedResistor
-from .data.dataset import Dataset, CustomSpatialDataType
-from .viz import add_ax_if_none, equal_aspect
-from .scene import Scene, MAX_NUM_MEDIUMS
+from tidy3d.components.base import cached_property
+from tidy3d.components.base import skip_if_fields_missing
+from tidy3d.components.validators import assert_objects_in_sim_bounds
+from tidy3d.components.validators import validate_mode_objects_symmetry
+from tidy3d.components.geometry.base import Geometry, Box
+from tidy3d.components.geometry.mesh import TriangleMesh
+from tidy3d.components.geometry.utils import flatten_groups, traverse_geometries
+from tidy3d.components.geometry.utils_2d import (
+    get_bounds,
+    increment_float,
+    set_bounds,
+    get_thickened_geom,
+)
+from tidy3d.components.geometry.utils_2d import subdivide, snap_coordinate_to_grid
+from tidy3d.components.types import Ax, FreqBound, Axis, annotate_type, InterpMethod, Symmetry
+from tidy3d.components.types import Literal, TYPE_TAG_STR
+from tidy3d.components.grid.grid import Coords1D, Grid, Coords
+from tidy3d.components.grid.grid_spec import GridSpec, UniformGrid, AutoGrid, CustomGrid
+from tidy3d.components.grid.grid_spec import ConformalMeshSpecType, StaircasingConformalMeshSpec
+from tidy3d.components.solvers.em.medium import MediumType, AbstractMedium
+from tidy3d.components.solvers.em.medium import AbstractCustomMedium, Medium, Medium2D, MediumType3D
+from tidy3d.components.solvers.em.medium import (
+    AnisotropicMedium,
+    FullyAnisotropicMedium,
+    AbstractPerturbationMedium,
+)
+from tidy3d.components.solvers.em.boundary import (
+    BoundarySpec,
+    BlochBoundary,
+    PECBoundary,
+    PMCBoundary,
+    Periodic,
+    Boundary,
+)
+from tidy3d.components.solvers.em.boundary import PML, StablePML, Absorber, AbsorberSpec
+from tidy3d.components.solvers.em.structure import Structure, MeshOverrideStructure
+from tidy3d.components.source import (
+    SourceType,
+    PlaneWave,
+    GaussianBeam,
+    AstigmaticGaussianBeam,
+    CustomFieldSource,
+)
+from tidy3d.components.source import CustomCurrentSource, CustomSourceTime, ContinuousWave
+from tidy3d.components.source import TFSF, Source, ModeSource
+from tidy3d.components.solvers.em.monitor import (
+    MonitorType,
+    Monitor,
+    FreqMonitor,
+    SurfaceIntegrationMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    AbstractModeMonitor,
+    FieldMonitor,
+    TimeMonitor,
+    FieldTimeMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    PermittivityMonitor,
+    DiffractionMonitor,
+    AbstractFieldProjectionMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    FieldProjectionAngleMonitor,
+    FieldProjectionKSpaceMonitor,
+)
+from tidy3d.components.lumped_element import LumpedElementType, LumpedResistor
+from tidy3d.components.data.dataset import Dataset, CustomSpatialDataType
+from tidy3d.components.viz import add_ax_if_none, equal_aspect
+from tidy3d.components.scene import Scene, MAX_NUM_MEDIUMS
 
-from .viz import PlotParams
-from .viz import plot_params_pml, plot_params_override_structures
-from .viz import plot_params_pec, plot_params_pmc, plot_params_bloch, plot_sim_3d
+from tidy3d.components.viz import PlotParams
+from tidy3d.components.viz import plot_params_pml, plot_params_override_structures
+from tidy3d.components.viz import plot_params_pec, plot_params_pmc, plot_params_bloch, plot_sim_3d
 
-from ..constants import C_0, SECOND, fp_eps, inf
-from ..exceptions import SetupError, ValidationError, Tidy3dError, Tidy3dImportError
-from ..log import log
-from ..updater import Updater
+from tidy3d.constants import C_0, SECOND, fp_eps, inf
+from tidy3d.exceptions import SetupError, ValidationError, Tidy3dError, Tidy3dImportError
+from tidy3d.log import log
+from tidy3d.updater import Updater
 
 from tidy3d.components.base_sim import AbstractSimulation
 

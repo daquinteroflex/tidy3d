@@ -25,13 +25,29 @@ from ..types import Coordinate, Symmetry, ArrayFloat1D, ArrayFloat2D, Size, Nump
 from ..types import EpsSpecType, Literal
 from ..grid.grid import Grid, Coords
 from ..validators import enforce_monitor_fields_present, required_if_symmetry_present
-from ..monitor import MonitorType, FieldMonitor, FieldTimeMonitor, ModeSolverMonitor
-from ..monitor import ModeMonitor, FluxMonitor, FluxTimeMonitor, PermittivityMonitor
-from ..monitor import FieldProjectionAngleMonitor, FieldProjectionCartesianMonitor
-from ..monitor import FieldProjectionKSpaceMonitor, FieldProjectionSurface
-from ..monitor import DiffractionMonitor
+from tidy3d.components.solvers.em.monitor import (
+    MonitorType,
+    FieldMonitor,
+    FieldTimeMonitor,
+    ModeSolverMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    ModeMonitor,
+    FluxMonitor,
+    FluxTimeMonitor,
+    PermittivityMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    FieldProjectionAngleMonitor,
+    FieldProjectionCartesianMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    FieldProjectionKSpaceMonitor,
+    FieldProjectionSurface,
+)
+from tidy3d.components.solvers.em.monitor import DiffractionMonitor
 from ..source import SourceTimeType, CustomFieldSource
-from ..medium import Medium, MediumType
+from tidy3d.components.solvers.em.medium import Medium, MediumType
 from ...exceptions import SetupError, DataError, Tidy3dNotImplementedError, ValidationError
 from ...constants import ETA_0, C_0, MICROMETER
 from ...log import log

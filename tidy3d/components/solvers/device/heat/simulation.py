@@ -19,7 +19,7 @@ from tidy3d.components.base_sim import AbstractSimulation
 from tidy3d.components.base import cached_property, skip_if_fields_missing
 from tidy3d.components.types import Ax, Shapely, TYPE_TAG_STR, ScalarSymmetry, Bound
 from tidy3d.components.viz import add_ax_if_none, equal_aspect, PlotParams
-from tidy3d.components.structure import Structure
+from tidy3d.components.solvers.em.structure import Structure
 from tidy3d.components.geometry.base import Box, GeometryGroup
 from tidy3d.components.geometry.primitives import Sphere, Cylinder
 from tidy3d.components.geometry.polyslab import PolySlab

@@ -6,17 +6,17 @@ import numpy
 import pydantic.v1 as pydantic
 
 from ...components.base import Tidy3dBaseModel, cached_property, skip_if_fields_missing
-from ...components.boundary import BoundarySpec, Periodic
+from tidy3d.components.solvers.em.boundary import BoundarySpec, Periodic
 from ...components.data.data_array import ModeIndexDataArray, FreqModeDataArray
 from ...components.geometry.base import Box
 from ...components.geometry.polyslab import PolySlab
 from ...components.grid.grid_spec import GridSpec
-from ...components.medium import Medium, MediumType
-from ...components.mode import ModeSpec
-from ...components.simulation import Simulation
+from tidy3d.components.solvers.em.medium import Medium, MediumType
+from tidy3d.components.solvers.em.mode import ModeSpec
+from tidy3d.components.solvers.em.simulation import Simulation
 
 from ...components.source import ModeSource, GaussianPulse
-from ...components.structure import Structure
+from tidy3d.components.solvers.em.structure import Structure
 from ...components.types import ArrayFloat1D, Ax, Axis, Coordinate, Literal, Size1D, Union
 from ...components.types import TYPE_TAG_STR
 from ...constants import C_0, inf, MICROMETER, RADIAN

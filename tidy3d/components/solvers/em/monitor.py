@@ -5,17 +5,17 @@ from typing import Union, Tuple
 import pydantic.v1 as pydantic
 import numpy as np
 
-from .types import Ax, EMField, ArrayFloat1D, FreqArray, FreqBound, Bound, Size
-from .types import Literal, Direction, Coordinate, Axis, ObsGridArray, BoxSurface
-from .validators import assert_plane, validate_freqs_not_empty, validate_freqs_min
-from .base import cached_property, Tidy3dBaseModel, skip_if_fields_missing
-from .mode import ModeSpec
-from .apodization import ApodizationSpec
-from .medium import MediumType
-from .viz import ARROW_COLOR_MONITOR, ARROW_ALPHA
-from ..constants import HERTZ, SECOND, MICROMETER, RADIAN, inf
-from ..exceptions import SetupError, ValidationError
-from ..log import log
+from tidy3d.components.types import Ax, EMField, ArrayFloat1D, FreqArray, FreqBound, Bound, Size
+from tidy3d.components.types import Literal, Direction, Coordinate, Axis, ObsGridArray, BoxSurface
+from tidy3d.components.validators import assert_plane, validate_freqs_not_empty, validate_freqs_min
+from tidy3d.components.base import cached_property, Tidy3dBaseModel, skip_if_fields_missing
+from tidy3d.components.solvers.em.mode import ModeSpec
+from tidy3d.components.apodization import ApodizationSpec
+from tidy3d.components.solvers.em.medium import MediumType
+from tidy3d.components.viz import ARROW_COLOR_MONITOR, ARROW_ALPHA
+from tidy3d.constants import HERTZ, SECOND, MICROMETER, RADIAN, inf
+from tidy3d.exceptions import SetupError, ValidationError
+from tidy3d.log import log
 
 from tidy3d.components.base_sim import AbstractMonitor
 

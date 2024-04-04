@@ -10,7 +10,7 @@ import h5py
 import json
 
 from .monitor_data import MonitorDataTypes, MonitorDataType, AbstractFieldData, FieldTimeData
-from ..simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ..types import Ax, Axis, annotate_type, FieldVal, PlotScale, ColormapType
 from ..viz import equal_aspect, add_ax_if_none
 from ...exceptions import DataError, Tidy3dKeyError

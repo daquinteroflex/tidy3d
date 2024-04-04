@@ -10,7 +10,7 @@ from jax.tree_util import register_pytree_node_class
 import xarray as xr
 
 from ....components.types import Bound, Literal
-from ....components.medium import Medium, AnisotropicMedium, CustomMedium
+from tidy3d.components.solvers.em.medium import Medium, AnisotropicMedium, CustomMedium
 from ....components.geometry.base import Geometry
 from ....components.data.monitor_data import FieldData
 from ....exceptions import SetupError

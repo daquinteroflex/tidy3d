@@ -9,29 +9,38 @@ from math import isclose
 import pydantic.v1 as pd
 import numpy as np
 
-from .base import Tidy3dBaseModel, cached_property
-from .base import skip_if_fields_missing
-from .grid.grid import Coords, Grid
-from .types import PoleAndResidue, Ax, FreqBound, TYPE_TAG_STR
-from .types import InterpMethod, Bound, ArrayComplex3D, ArrayFloat1D
-from .types import Axis, TensorReal, Complex
-from .data.dataset import PermittivityDataset, CustomSpatialDataType, CustomSpatialDataTypeAnnotated
-from .data.dataset import _get_numpy_array, _zeros_like, _check_same_coordinates, _ones_like
-from .data.dataset import UnstructuredGridDataset
-from .data.validators import validate_no_nans
-from .data.data_array import SpatialDataArray, ScalarFieldDataArray, DATA_ARRAY_MAP
-from .viz import add_ax_if_none
-from .geometry.base import Geometry
-from .validators import validate_name_str, validate_parameter_perturbation
-from ..constants import C_0, pec_val, EPSILON_0, fp_eps, HBAR
-from ..constants import HERTZ, CONDUCTIVITY, PERMITTIVITY, RADPERSEC, MICROMETER, SECOND
-from ..constants import WATT, VOLT
-from ..exceptions import ValidationError, SetupError
-from ..log import log
-from .transformation import RotationType
-from .parameter_perturbation import ParameterPerturbation
-from .heat_spec import HeatSpecType
-from .time_modulation import ModulationSpec
+from tidy3d.components.base import Tidy3dBaseModel, cached_property
+from tidy3d.components.base import skip_if_fields_missing
+from tidy3d.components.grid.grid import Coords, Grid
+from tidy3d.components.types import PoleAndResidue, Ax, FreqBound, TYPE_TAG_STR
+from tidy3d.components.types import InterpMethod, Bound, ArrayComplex3D, ArrayFloat1D
+from tidy3d.components.types import Axis, TensorReal, Complex
+from tidy3d.components.data.dataset import (
+    PermittivityDataset,
+    CustomSpatialDataType,
+    CustomSpatialDataTypeAnnotated,
+)
+from tidy3d.components.data.dataset import (
+    _get_numpy_array,
+    _zeros_like,
+    _check_same_coordinates,
+    _ones_like,
+)
+from tidy3d.components.data.dataset import UnstructuredGridDataset
+from tidy3d.components.data.validators import validate_no_nans
+from tidy3d.components.data.data_array import SpatialDataArray, ScalarFieldDataArray, DATA_ARRAY_MAP
+from tidy3d.components.viz import add_ax_if_none
+from tidy3d.components.geometry.base import Geometry
+from tidy3d.components.validators import validate_name_str, validate_parameter_perturbation
+from tidy3d.constants import C_0, pec_val, EPSILON_0, fp_eps, HBAR
+from tidy3d.constants import HERTZ, CONDUCTIVITY, PERMITTIVITY, RADPERSEC, MICROMETER, SECOND
+from tidy3d.constants import WATT, VOLT
+from tidy3d.exceptions import ValidationError, SetupError
+from tidy3d.log import log
+from tidy3d.components.transformation import RotationType
+from tidy3d.components.translation.parameter_perturbation import ParameterPerturbation
+from tidy3d.components.solvers.device.heat_spec import HeatSpecType
+from tidy3d.components.time_modulation import ModulationSpec
 
 # evaluate frequency as this number (Hz) if inf
 FREQ_EVAL_INF = 1e50

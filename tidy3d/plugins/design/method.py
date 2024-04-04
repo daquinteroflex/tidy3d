@@ -7,7 +7,7 @@ import pydantic.v1 as pd
 import scipy.stats.qmc as qmc
 
 from ...components.base import Tidy3dBaseModel
-from ...components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ...log import log
 from ... import web
 from ...web.api.container import BatchData

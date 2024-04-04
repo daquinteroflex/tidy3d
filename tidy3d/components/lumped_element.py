@@ -8,7 +8,7 @@ import pydantic.v1 as pydantic
 from .base import cached_property, skip_if_fields_missing
 
 from .geometry.base import Box
-from ..components.structure import MeshOverrideStructure
+from tidy3d.components.solvers.em.structure import MeshOverrideStructure
 from .types import Axis
 from .viz import PlotParams, plot_params_lumped_element
 from ..constants import OHM

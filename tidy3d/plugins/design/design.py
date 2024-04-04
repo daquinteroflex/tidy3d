@@ -7,7 +7,7 @@ import inspect
 import pydantic.v1 as pd
 
 from ...components.base import Tidy3dBaseModel, cached_property
-from ...components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ...components.data.sim_data import SimulationData
 from ...web.api.container import BatchData
 

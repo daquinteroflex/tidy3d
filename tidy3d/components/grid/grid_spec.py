@@ -12,7 +12,7 @@ from .mesher import GradedMesher, MesherType
 from ..base import Tidy3dBaseModel, cached_property
 from ..types import Axis, Symmetry, annotate_type, TYPE_TAG_STR
 from ..source import SourceType
-from ..structure import Structure, StructureType
+from tidy3d.components.solvers.em.structure import Structure, StructureType
 from ..geometry.base import Box
 from ...log import log
 from ...exceptions import SetupError

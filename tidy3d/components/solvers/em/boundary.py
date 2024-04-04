@@ -7,14 +7,14 @@ from typing import Union, Tuple, List
 import pydantic.v1 as pd
 import numpy as np
 
-from .base import Tidy3dBaseModel, cached_property
-from .types import Complex, Axis, TYPE_TAG_STR
-from .source import GaussianBeam, ModeSource, PlaneWave, TFSF
-from .medium import Medium
+from tidy3d.components.base import Tidy3dBaseModel, cached_property
+from tidy3d.components.types import Complex, Axis, TYPE_TAG_STR
+from tidy3d.components.source import GaussianBeam, ModeSource, PlaneWave, TFSF
+from tidy3d.components.solvers.em.medium import Medium
 
-from ..constants import EPSILON_0, MU_0, PML_SIGMA
-from ..exceptions import SetupError, DataError
-from ..log import log
+from tidy3d.constants import EPSILON_0, MU_0, PML_SIGMA
+from tidy3d.exceptions import SetupError, DataError
+from tidy3d.log import log
 
 
 class BoundaryEdge(ABC, Tidy3dBaseModel):

@@ -4,12 +4,12 @@ import pytest
 import pydantic.v1 as pydantic
 
 import tidy3d as td
-from tidy3d.components.boundary import BoundarySpec, Boundary
-from tidy3d.components.boundary import Periodic, PECBoundary, PMCBoundary, BlochBoundary
-from tidy3d.components.boundary import PML, StablePML, Absorber
+from tidy3d.components.solvers.em.boundary import BoundarySpec, Boundary
+from tidy3d.components.solvers.em.boundary import Periodic, PECBoundary, PMCBoundary, BlochBoundary
+from tidy3d.components.solvers.em.boundary import PML, StablePML, Absorber
 from tidy3d.components.source import GaussianPulse, PlaneWave, PointDipole
 from tidy3d.exceptions import SetupError, DataError
-from ..utils import assert_log_level, log_capture
+from ..utils import assert_log_level
 
 
 def test_bloch_phase():

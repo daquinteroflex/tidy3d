@@ -7,7 +7,7 @@ import pydantic.v1 as pd
 from jax import custom_vjp
 from jax.tree_util import register_pytree_node_class
 
-from ...components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ...components.data.sim_data import SimulationData
 from tidy3d.web.api.webapi import run as web_run
 from tidy3d.web.api.webapi import wait_for_connection

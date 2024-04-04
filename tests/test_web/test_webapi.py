@@ -23,7 +23,7 @@ from tidy3d.components.grid.grid_spec import GridSpec
 from tidy3d.components.data.sim_data import SimulationData
 from tidy3d.components.data.monitor_data import FieldData
 from tidy3d.components.data.data_array import ScalarFieldDataArray
-from tidy3d.components.monitor import FieldMonitor
+from tidy3d.components.solvers.em.monitor import FieldMonitor
 
 TASK_NAME = "task_name_test"
 TASK_ID = "1234"

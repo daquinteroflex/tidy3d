@@ -2,7 +2,7 @@
 import pydantic.v1 as pd
 
 from ....components.geometry.base import Box
-from ....components.mode import ModeSpec
+from tidy3d.components.solvers.em.mode import ModeSpec
 from ....components.types import Direction
 from ....components.data.data_array import DataArray
 

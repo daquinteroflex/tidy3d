@@ -8,15 +8,20 @@ import pydantic.v1 as pydantic
 import xarray as xr
 import tidy3d as td
 
-from ..utils import assert_log_level, log_capture, cartesian_to_unstructured
+from ..utils import assert_log_level, cartesian_to_unstructured
 from tidy3d.components.data.dataset import (
     PermittivityDataset,
     _get_numpy_array,
     UnstructuredGridDataset,
 )
-from tidy3d.components.medium import CustomMedium, CustomPoleResidue, CustomSellmeier
-from tidy3d.components.medium import CustomLorentz, CustomDrude, CustomDebye, AbstractCustomMedium
-from tidy3d.components.medium import CustomAnisotropicMedium
+from tidy3d.components.solvers.em.medium import CustomMedium, CustomPoleResidue, CustomSellmeier
+from tidy3d.components.solvers.em.medium import (
+    CustomLorentz,
+    CustomDrude,
+    CustomDebye,
+    AbstractCustomMedium,
+)
+from tidy3d.components.solvers.em.medium import CustomAnisotropicMedium
 
 np.random.seed(4)
 

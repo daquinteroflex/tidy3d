@@ -17,7 +17,7 @@ from ....components.geometry.base import Geometry, Box, GeometryGroup
 from ....components.geometry.polyslab import PolySlab
 from ....components.data.monitor_data import FieldData, PermittivityData
 from ....components.data.data_array import ScalarFieldDataArray
-from ....components.monitor import FieldMonitor, PermittivityMonitor
+from tidy3d.components.solvers.em.monitor import FieldMonitor, PermittivityMonitor
 from ....constants import fp_eps, MICROMETER
 from ....exceptions import AdjointError
 

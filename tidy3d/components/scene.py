@@ -14,16 +14,16 @@ from .validators import assert_unique_names
 from .geometry.base import Box, GeometryGroup, ClipOperation
 from .geometry.utils import flatten_groups, traverse_geometries
 from .types import Ax, Shapely, TYPE_TAG_STR, Bound, Size, Coordinate, InterpMethod
-from .medium import Medium, MediumType
-from .medium import AbstractCustomMedium, Medium2D, MediumType3D
-from .medium import AbstractPerturbationMedium
+from tidy3d.components.solvers.em.medium import Medium, MediumType
+from tidy3d.components.solvers.em.medium import AbstractCustomMedium, Medium2D, MediumType3D
+from tidy3d.components.solvers.em.medium import AbstractPerturbationMedium
 from .grid.grid import Grid
-from .structure import Structure
+from tidy3d.components.solvers.em.structure import Structure
 from .data.dataset import _get_numpy_array, CustomSpatialDataType
 from .data.dataset import UnstructuredGridDataset, TetrahedralGridDataset, TriangularGridDataset
 from .viz import add_ax_if_none, equal_aspect
 from .grid.grid import Coords
-from .heat_spec import SolidSpec
+from tidy3d.components.solvers.device.heat_spec import SolidSpec
 
 from .viz import MEDIUM_CMAP, STRUCTURE_EPS_CMAP, PlotParams, polygon_path, STRUCTURE_HEAT_COND_CMAP
 from .viz import plot_params_structure, plot_params_fluid

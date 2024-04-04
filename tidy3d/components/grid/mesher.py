@@ -15,8 +15,8 @@ from shapely.errors import ShapelyDeprecationWarning
 
 from ..base import Tidy3dBaseModel
 from ..types import Axis, ArrayFloat1D
-from ..structure import Structure, MeshOverrideStructure, StructureType
-from ..medium import AnisotropicMedium, Medium2D, PECMedium
+from tidy3d.components.solvers.em.structure import Structure, MeshOverrideStructure, StructureType
+from tidy3d.components.solvers.em.medium import AnisotropicMedium, Medium2D, PECMedium
 from ...exceptions import SetupError, ValidationError
 from ...constants import C_0, fp_eps
 from ...log import log

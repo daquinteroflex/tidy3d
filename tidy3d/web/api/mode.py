@@ -13,9 +13,9 @@ import pydantic.v1 as pydantic
 from botocore.exceptions import ClientError
 
 from ..core.environment import Env
-from ...components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ...components.data.monitor_data import ModeSolverData
-from ...components.medium import AbstractCustomMedium
+from tidy3d.components.solvers.em.medium import AbstractCustomMedium
 from ...components.types import Literal
 from ...exceptions import WebError
 from ...log import log, get_logging_console

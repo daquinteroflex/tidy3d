@@ -11,7 +11,7 @@ from ..geometry.primitives import Cylinder
 from ..geometry.polyslab import PolySlab
 from ..grid.grid import Grid
 from ..scene import Scene
-from ..structure import Structure
+from tidy3d.components.solvers.em.structure import Structure
 
 # for 2d materials. to find neighboring media, search a distance on either side
 # equal to this times the grid size

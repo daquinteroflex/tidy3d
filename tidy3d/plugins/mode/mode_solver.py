@@ -12,13 +12,20 @@ import xarray as xr
 
 from ...log import log
 from ...components.base import Tidy3dBaseModel, cached_property, skip_if_fields_missing
-from ...components.boundary import PECBoundary, BoundarySpec, Boundary, PML, StablePML, Absorber
+from tidy3d.components.solvers.em.boundary import (
+    PECBoundary,
+    BoundarySpec,
+    Boundary,
+    PML,
+    StablePML,
+    Absorber,
+)
 from ...components.geometry.base import Box
-from ...components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ...components.grid.grid import Grid
-from ...components.mode import ModeSpec
-from ...components.monitor import ModeSolverMonitor, ModeMonitor
-from ...components.medium import FullyAnisotropicMedium
+from tidy3d.components.solvers.em.mode import ModeSpec
+from tidy3d.components.solvers.em.monitor import ModeSolverMonitor, ModeMonitor
+from tidy3d.components.solvers.em.medium import FullyAnisotropicMedium
 from ...components.source import ModeSource, SourceTime
 from ...components.types import Direction, FreqArray, Ax, Literal, Axis, Symmetry, PlotScale
 from ...components.types import ArrayComplex3D, ArrayComplex4D, ArrayFloat1D, EpsSpecType

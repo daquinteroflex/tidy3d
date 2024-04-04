@@ -6,11 +6,11 @@ from math import isclose
 import pydantic.v1 as pd
 import numpy as np
 
-from ..constants import MICROMETER, RADIAN, GLANCING_CUTOFF, fp_eps
-from .base import Tidy3dBaseModel, skip_if_fields_missing
-from .types import Axis2D, Literal, TrackFreq
-from ..log import log
-from ..exceptions import SetupError, ValidationError
+from tidy3d.constants import MICROMETER, RADIAN, GLANCING_CUTOFF, fp_eps
+from tidy3d.components.base import Tidy3dBaseModel, skip_if_fields_missing
+from tidy3d.components.types import Axis2D, Literal, TrackFreq
+from tidy3d.log import log
+from tidy3d.exceptions import SetupError, ValidationError
 
 
 GROUP_INDEX_STEP = 0.005

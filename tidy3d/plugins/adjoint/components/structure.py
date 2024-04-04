@@ -8,11 +8,11 @@ import numpy as np
 from jax.tree_util import register_pytree_node_class
 
 from ....constants import C_0
-from ....components.structure import Structure
-from ....components.monitor import FieldMonitor
+from tidy3d.components.solvers.em.structure import Structure
+from tidy3d.components.solvers.em.monitor import FieldMonitor
 from ....components.data.monitor_data import FieldData, PermittivityData
 from ....components.types import Bound, TYPE_TAG_STR
-from ....components.medium import MediumType
+from tidy3d.components.solvers.em.medium import MediumType
 from ....components.geometry.utils import GeometryType
 
 from .base import JaxObject

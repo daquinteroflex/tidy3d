@@ -8,7 +8,7 @@ import pydantic.v1 as pd
 import numpy as np
 
 from ....constants import HERTZ
-from ....components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ....components.data.data_array import DataArray
 from ....components.types import Complex, FreqArray
 from ....components.base import Tidy3dBaseModel, cached_property

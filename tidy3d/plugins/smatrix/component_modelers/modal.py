@@ -8,8 +8,8 @@ from typing import List, Tuple, Optional, Dict
 import pydantic.v1 as pd
 import numpy as np
 
-from ....components.simulation import Simulation
-from ....components.monitor import ModeMonitor
+from tidy3d.components.solvers.em.simulation import Simulation
+from tidy3d.components.solvers.em.monitor import ModeMonitor
 from ....components.source import ModeSource, GaussianPulse
 from ....components.data.sim_data import SimulationData
 from ....components.types import Ax, Complex

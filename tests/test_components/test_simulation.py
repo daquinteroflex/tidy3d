@@ -6,9 +6,9 @@ import gdstk
 
 import numpy as np
 import tidy3d as td
-from tidy3d.exceptions import SetupError, Tidy3dKeyError, ValidationError
-from tidy3d.components import simulation
-from tidy3d.components.simulation import MAX_NUM_SOURCES
+from tidy3d.exceptions import SetupError, Tidy3dKeyError
+from tidy3d.components.solvers.em import simulation
+from tidy3d.components.solvers.em.simulation import MAX_NUM_SOURCES
 from tidy3d.components.scene import MAX_NUM_MEDIUMS, MAX_GEOMETRY_COUNT
 from ..utils import assert_log_level, SIM_FULL, run_emulated, AssertLogLevel
 from ..utils import cartesian_to_unstructured, log_capture  # noqa: F401

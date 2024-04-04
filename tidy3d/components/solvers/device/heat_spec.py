@@ -5,9 +5,9 @@ from abc import ABC
 
 import pydantic.v1 as pd
 
-from .types import Union
-from .base import Tidy3dBaseModel
-from ..constants import SPECIFIC_HEAT_CAPACITY, THERMAL_CONDUCTIVITY
+from tidy3d.components.types import Union
+from tidy3d.components.base import Tidy3dBaseModel
+from tidy3d.constants import SPECIFIC_HEAT_CAPACITY, THERMAL_CONDUCTIVITY
 
 
 # Liquid class

@@ -9,24 +9,28 @@ from typing_extensions import Literal
 import pydantic.v1 as pydantic
 import numpy as np
 
-from .base import cached_property, skip_if_fields_missing
+from tidy3d.components.base import cached_property, skip_if_fields_missing
 from tidy3d.components.base_sim import AbstractSource
-from .time import AbstractTimeDependence
-from .types import Coordinate, Direction, Polarization, Ax, FreqBound
-from .types import ArrayFloat1D, Axis, PlotVal, ArrayComplex1D, TYPE_TAG_STR
-from .validators import assert_plane, assert_volumetric
-from .validators import warn_if_dataset_none, assert_single_freq_in_range, _assert_min_freq
-from .data.dataset import FieldDataset, TimeDataset
-from .data.validators import validate_no_nans
-from .data.data_array import TimeDataArray
-from .geometry.base import Box
-from .mode import ModeSpec
-from .viz import add_ax_if_none, PlotParams, plot_params_source
-from .viz import ARROW_COLOR_SOURCE, ARROW_ALPHA, ARROW_COLOR_POLARIZATION
-from ..constants import RADIAN, HERTZ, MICROMETER, GLANCING_CUTOFF
-from ..constants import inf
-from ..exceptions import SetupError, ValidationError
-from ..log import log
+from tidy3d.components.time import AbstractTimeDependence
+from tidy3d.components.types import Coordinate, Direction, Polarization, Ax, FreqBound
+from tidy3d.components.types import ArrayFloat1D, Axis, PlotVal, ArrayComplex1D, TYPE_TAG_STR
+from tidy3d.components.validators import assert_plane, assert_volumetric
+from tidy3d.components.validators import (
+    warn_if_dataset_none,
+    assert_single_freq_in_range,
+    _assert_min_freq,
+)
+from tidy3d.components.data.dataset import FieldDataset, TimeDataset
+from tidy3d.components.data.validators import validate_no_nans
+from tidy3d.components.data.data_array import TimeDataArray
+from tidy3d.components.geometry.base import Box
+from tidy3d.components.solvers.em.mode import ModeSpec
+from tidy3d.components.viz import add_ax_if_none, PlotParams, plot_params_source
+from tidy3d.components.viz import ARROW_COLOR_SOURCE, ARROW_ALPHA, ARROW_COLOR_POLARIZATION
+from tidy3d.constants import RADIAN, HERTZ, MICROMETER, GLANCING_CUTOFF
+from tidy3d.constants import inf
+from tidy3d.exceptions import SetupError, ValidationError
+from tidy3d.log import log
 
 # when checking if custom data spans the source plane, allow for a small tolerance
 # due to numerical precision

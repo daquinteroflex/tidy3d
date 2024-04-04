@@ -11,7 +11,12 @@ import scipy
 from .fit import DispersionFitter
 from ...log import log, get_logging_console
 from ...components.base import Tidy3dBaseModel, cached_property, skip_if_fields_missing
-from ...components.medium import PoleResidue, LOSS_CHECK_MIN, LOSS_CHECK_MAX, LOSS_CHECK_NUM
+from tidy3d.components.solvers.em.medium import (
+    PoleResidue,
+    LOSS_CHECK_MIN,
+    LOSS_CHECK_MAX,
+    LOSS_CHECK_NUM,
+)
 from ...components.types import ArrayFloat1D, ArrayComplex1D, ArrayFloat2D, ArrayComplex2D
 from ...exceptions import ValidationError
 

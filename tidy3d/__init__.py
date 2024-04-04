@@ -13,54 +13,83 @@ from .components.geometry.mesh import TriangleMesh
 from .components.geometry.polyslab import PolySlab
 
 # medium
-from .components.medium import Medium, PoleResidue, AnisotropicMedium, PEC, PECMedium
-from .components.medium import Medium2D, PEC2D, medium_from_nk
-from .components.medium import Sellmeier, Debye, Drude, Lorentz
-from .components.medium import CustomMedium, CustomPoleResidue
-from .components.medium import CustomSellmeier, FullyAnisotropicMedium
-from .components.medium import CustomLorentz, CustomDrude, CustomDebye, CustomAnisotropicMedium
-from .components.medium import NonlinearSusceptibility, TwoPhotonAbsorption, KerrNonlinearity
+from tidy3d.components.solvers.em.medium import (
+    Medium,
+    PoleResidue,
+    AnisotropicMedium,
+    PEC,
+    PECMedium,
+)
+from tidy3d.components.solvers.em.medium import Medium2D, PEC2D, medium_from_nk
+from tidy3d.components.solvers.em.medium import Sellmeier, Debye, Drude, Lorentz
+from tidy3d.components.solvers.em.medium import CustomMedium, CustomPoleResidue
+from tidy3d.components.solvers.em.medium import CustomSellmeier, FullyAnisotropicMedium
+from tidy3d.components.solvers.em.medium import (
+    CustomLorentz,
+    CustomDrude,
+    CustomDebye,
+    CustomAnisotropicMedium,
+)
+from tidy3d.components.solvers.em.medium import (
+    NonlinearSusceptibility,
+    TwoPhotonAbsorption,
+    KerrNonlinearity,
+)
 from .components.transformation import RotationAroundAxis
-from .components.medium import PerturbationMedium, PerturbationPoleResidue
-from .components.parameter_perturbation import ParameterPerturbation
-from .components.parameter_perturbation import LinearHeatPerturbation, CustomHeatPerturbation
-from .components.parameter_perturbation import LinearChargePerturbation, CustomChargePerturbation
+from tidy3d.components.solvers.em.medium import PerturbationMedium, PerturbationPoleResidue
+from tidy3d.components.translation.parameter_perturbation import ParameterPerturbation
+from tidy3d.components.translation.parameter_perturbation import (
+    LinearHeatPerturbation,
+    CustomHeatPerturbation,
+)
+from tidy3d.components.translation.parameter_perturbation import (
+    LinearChargePerturbation,
+    CustomChargePerturbation,
+)
 
 # time modulation
 from .components.time_modulation import SpaceTimeModulation, SpaceModulation
 from .components.time_modulation import ContinuousWaveTimeModulation, ModulationSpec
 
 # structures
-from .components.structure import Structure, MeshOverrideStructure
+from tidy3d.components.solvers.em.structure import Structure, MeshOverrideStructure
 
 # modes
-from .components.mode import ModeSpec
+from tidy3d.components.solvers.em.mode import ModeSpec
 
 # apodization
 from .components.apodization import ApodizationSpec
 
 # sources
-from .components.source import GaussianPulse, ContinuousWave, CustomSourceTime
-from .components.source import UniformCurrentSource, PlaneWave, ModeSource, PointDipole
-from .components.source import GaussianBeam, AstigmaticGaussianBeam
 from .components.source import CustomFieldSource, TFSF, CustomCurrentSource
 
 # monitors
-from .components.monitor import FieldMonitor, FieldTimeMonitor, FluxMonitor, FluxTimeMonitor
-from .components.monitor import ModeMonitor, ModeSolverMonitor, PermittivityMonitor
-from .components.monitor import FieldProjectionAngleMonitor, FieldProjectionCartesianMonitor
-from .components.monitor import FieldProjectionKSpaceMonitor, FieldProjectionSurface
-from .components.monitor import DiffractionMonitor
+from tidy3d.components.solvers.em.monitor import (
+    FieldMonitor,
+    FieldTimeMonitor,
+    FluxMonitor,
+    FluxTimeMonitor,
+)
+from tidy3d.components.solvers.em.monitor import ModeMonitor, ModeSolverMonitor, PermittivityMonitor
+from tidy3d.components.solvers.em.monitor import (
+    FieldProjectionAngleMonitor,
+    FieldProjectionCartesianMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    FieldProjectionKSpaceMonitor,
+    FieldProjectionSurface,
+)
+from tidy3d.components.solvers.em.monitor import DiffractionMonitor
 
 # lumped elements
 from .components.lumped_element import LumpedResistor
 
 # simulation
-from .components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 
 # field projection
 
-from .components.field_projection import FieldProjector
+from tidy3d.components.solvers.em.field_projection import FieldProjector
 
 # data
 from .components.data.data_array import ScalarFieldDataArray, ScalarModeFieldDataArray
@@ -87,11 +116,23 @@ from .components.data.data_array import PointDataArray, CellDataArray, IndexedDa
 from .components.data.dataset import TriangularGridDataset, TetrahedralGridDataset
 
 # boundary
-from .components.boundary import BoundarySpec, Boundary, BoundaryEdge, BoundaryEdgeType
-from .components.boundary import BlochBoundary, Periodic, PECBoundary, PMCBoundary
-from .components.boundary import PML, StablePML, Absorber, PMLParams, AbsorberParams, PMLTypes
-from .components.boundary import DefaultPMLParameters, DefaultStablePMLParameters
-from .components.boundary import DefaultAbsorberParameters
+from tidy3d.components.solvers.em.boundary import (
+    BoundarySpec,
+    Boundary,
+    BoundaryEdge,
+    BoundaryEdgeType,
+)
+from tidy3d.components.solvers.em.boundary import BlochBoundary, Periodic, PECBoundary, PMCBoundary
+from tidy3d.components.solvers.em.boundary import (
+    PML,
+    StablePML,
+    Absorber,
+    PMLParams,
+    AbsorberParams,
+    PMLTypes,
+)
+from tidy3d.components.solvers.em.boundary import DefaultPMLParameters, DefaultStablePMLParameters
+from tidy3d.components.solvers.em.boundary import DefaultAbsorberParameters
 
 # constants imported as `C_0 = td.C_0` or `td.constants.C_0`
 from .constants import C_0, ETA_0, HBAR, EPSILON_0, MU_0, Q_e, K_B, inf
@@ -102,10 +143,10 @@ from .material_library.material_library import material_library
 from .material_library.parametric_materials import Graphene
 
 # for docs
-from .components.medium import AbstractMedium, NonlinearSpec, NonlinearModel
+from tidy3d.components.solvers.em.medium import AbstractMedium, NonlinearSpec, NonlinearModel
 from .components.geometry.base import Geometry
 from .components.source import Source, SourceTime
-from .components.monitor import Monitor
+from tidy3d.components.solvers.em.monitor import Monitor
 from .components.grid.grid import YeeGrid, FieldGrid, Coords1D
 
 from .log import log, set_logging_file, set_logging_console
@@ -129,7 +170,7 @@ from .components.bc_placement import StructureSimulationBoundary
 from .components.bc_placement import SimulationBoundary
 
 # heat
-from .components.heat_spec import FluidSpec, SolidSpec
+from tidy3d.components.solvers.device.heat_spec import FluidSpec, SolidSpec
 from tidy3d.components.solvers.device.heat.data.sim_data import HeatSimulationData
 from tidy3d.components.solvers.device.heat.grid import (
     UniformUnstructuredGrid,

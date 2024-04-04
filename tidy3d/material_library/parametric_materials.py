@@ -5,7 +5,7 @@ import warnings
 import pydantic.v1 as pd
 import numpy as np
 
-from ..components.medium import PoleResidue, Medium2D, Drude
+from tidy3d.components.solvers.em.medium import PoleResidue, Medium2D, Drude
 from ..components.base import Tidy3dBaseModel
 from ..constants import EPSILON_0, Q_e, HBAR, K_B, ELECTRON_VOLT, KELVIN
 from ..log import log

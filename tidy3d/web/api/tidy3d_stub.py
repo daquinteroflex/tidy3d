@@ -18,7 +18,7 @@ from ...components.base import _get_valid_extension
 from ...components.data.sim_data import SimulationData
 from ...components.data.monitor_data import ModeSolverData
 from ..core.types import TaskType
-from ...components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ...plugins.mode.mode_solver import ModeSolver
 from ...components.heat.simulation import HeatSimulation
 from tidy3d.components.solvers.device.heat.data.sim_data import HeatSimulationData

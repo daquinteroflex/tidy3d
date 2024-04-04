@@ -10,7 +10,7 @@ from ....components.geometry.utils_2d import increment_float
 from ....components.types import Complex, FreqArray, Axis
 from ....components.base import cached_property
 from ....components.lumped_element import LumpedResistor
-from ....components.monitor import FieldMonitor
+from tidy3d.components.solvers.em.monitor import FieldMonitor
 from ....components.source import UniformCurrentSource, GaussianPulse
 from ....components.validators import assert_plane
 from ....components.data.data_array import DataArray

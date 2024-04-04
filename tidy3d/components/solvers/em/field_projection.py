@@ -8,21 +8,37 @@ import pydantic.v1 as pydantic
 
 from rich.progress import track
 
-from .data.data_array import FieldProjectionAngleDataArray, FieldProjectionCartesianDataArray
-from .data.data_array import FieldProjectionKSpaceDataArray
-from .data.monitor_data import FieldData
-from .data.monitor_data import AbstractFieldProjectionData, FieldProjectionAngleData
-from .data.monitor_data import FieldProjectionCartesianData, FieldProjectionKSpaceData
-from .data.sim_data import SimulationData
-from .monitor import FieldProjectionSurface
-from .monitor import FieldMonitor, AbstractFieldProjectionMonitor, FieldProjectionAngleMonitor
-from .monitor import FieldProjectionCartesianMonitor, FieldProjectionKSpaceMonitor
-from .types import Direction, Coordinate, ArrayComplex4D
-from .medium import MediumType
-from .base import Tidy3dBaseModel, cached_property, skip_if_fields_missing
-from ..exceptions import SetupError
-from ..constants import C_0, MICROMETER, ETA_0, EPSILON_0, MU_0
-from ..log import get_logging_console
+from tidy3d.components.data.data_array import (
+    FieldProjectionAngleDataArray,
+    FieldProjectionCartesianDataArray,
+)
+from tidy3d.components.data.data_array import FieldProjectionKSpaceDataArray
+from tidy3d.components.data.monitor_data import FieldData
+from tidy3d.components.data.monitor_data import (
+    AbstractFieldProjectionData,
+    FieldProjectionAngleData,
+)
+from tidy3d.components.data.monitor_data import (
+    FieldProjectionCartesianData,
+    FieldProjectionKSpaceData,
+)
+from tidy3d.components.data.sim_data import SimulationData
+from tidy3d.components.solvers.em.monitor import FieldProjectionSurface
+from tidy3d.components.solvers.em.monitor import (
+    FieldMonitor,
+    AbstractFieldProjectionMonitor,
+    FieldProjectionAngleMonitor,
+)
+from tidy3d.components.solvers.em.monitor import (
+    FieldProjectionCartesianMonitor,
+    FieldProjectionKSpaceMonitor,
+)
+from tidy3d.components.types import Direction, Coordinate, ArrayComplex4D
+from tidy3d.components.solvers.em.medium import MediumType
+from tidy3d.components.base import Tidy3dBaseModel, cached_property, skip_if_fields_missing
+from tidy3d.exceptions import SetupError
+from tidy3d.constants import C_0, MICROMETER, ETA_0, EPSILON_0, MU_0
+from tidy3d.log import get_logging_console
 
 # Default number of points per wavelength in the background medium to use for resampling fields.
 PTS_PER_WVL = 10

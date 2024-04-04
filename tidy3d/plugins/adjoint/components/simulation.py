@@ -11,11 +11,11 @@ from jax.tree_util import register_pytree_node_class
 
 from ....log import log
 from ....components.base import cached_property, Tidy3dBaseModel, skip_if_fields_missing
-from ....components.monitor import FieldMonitor, PermittivityMonitor
-from ....components.monitor import ModeMonitor, DiffractionMonitor, Monitor
-from ....components.simulation import Simulation
+from tidy3d.components.solvers.em.monitor import FieldMonitor, PermittivityMonitor
+from tidy3d.components.solvers.em.monitor import ModeMonitor, DiffractionMonitor, Monitor
+from tidy3d.components.solvers.em.simulation import Simulation
 from ....components.data.monitor_data import FieldData, PermittivityData
-from ....components.structure import Structure
+from tidy3d.components.solvers.em.structure import Structure
 from ....components.types import Ax, annotate_type
 from ....constants import HERTZ, SECOND
 from ....exceptions import AdjointError

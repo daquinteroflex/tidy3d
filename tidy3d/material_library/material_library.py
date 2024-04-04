@@ -3,7 +3,7 @@ import json
 from typing import Dict, List
 import pydantic.v1 as pd
 
-from ..components.medium import PoleResidue, Medium2D, AnisotropicMedium, Sellmeier
+from tidy3d.components.solvers.em.medium import PoleResidue, Medium2D, AnisotropicMedium, Sellmeier
 from ..components.base import Tidy3dBaseModel
 from ..components.types import Axis
 from ..exceptions import SetupError

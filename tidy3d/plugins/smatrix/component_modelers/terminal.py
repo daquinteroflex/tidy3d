@@ -10,7 +10,7 @@ import xarray as xr
 
 from ....constants import C_0, fp_eps
 from ....exceptions import SetupError
-from ....components.simulation import Simulation
+from tidy3d.components.solvers.em.simulation import Simulation
 from ....components.geometry.utils_2d import snap_coordinate_to_grid
 from ....components.data.sim_data import SimulationData
 from ....components.source import GaussianPulse

@@ -5,15 +5,15 @@ from typing import Union, Tuple, Optional
 import pydantic.v1 as pydantic
 import numpy as np
 
-from .base import Tidy3dBaseModel, skip_if_fields_missing
-from .validators import validate_name_str
-from .geometry.utils import GeometryType, validate_no_transformed_polyslabs
-from .medium import MediumType, AbstractCustomMedium, Medium2D
-from .types import Ax, TYPE_TAG_STR, Axis
-from .viz import add_ax_if_none, equal_aspect
-from .grid.grid import Coords
-from ..constants import MICROMETER
-from ..exceptions import SetupError, Tidy3dError, Tidy3dImportError
+from tidy3d.components.base import Tidy3dBaseModel, skip_if_fields_missing
+from tidy3d.components.validators import validate_name_str
+from tidy3d.components.geometry.utils import GeometryType, validate_no_transformed_polyslabs
+from tidy3d.components.solvers.em.medium import MediumType, AbstractCustomMedium, Medium2D
+from tidy3d.components.types import Ax, TYPE_TAG_STR, Axis
+from tidy3d.components.viz import add_ax_if_none, equal_aspect
+from tidy3d.components.grid.grid import Coords
+from tidy3d.constants import MICROMETER
+from tidy3d.exceptions import SetupError, Tidy3dError, Tidy3dImportError
 
 try:
     gdstk_available = True

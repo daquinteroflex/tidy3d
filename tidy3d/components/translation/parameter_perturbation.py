@@ -9,16 +9,21 @@ import pydantic.v1 as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from .data.data_array import SpatialDataArray, HeatDataArray, ChargeDataArray, IndexedDataArray
-from .data.dataset import UnstructuredGridDataset, CustomSpatialDataType
-from .data.dataset import _get_numpy_array, _zeros_like, _check_same_coordinates
-from .base import Tidy3dBaseModel, cached_property
-from ..constants import KELVIN, CMCUBE, PERCMCUBE, inf
-from ..log import log
-from ..components.types import Ax, ArrayLike, Complex, FieldVal, InterpMethod, TYPE_TAG_STR
-from ..components.viz import add_ax_if_none
-from ..components.data.validators import validate_no_nans
-from ..exceptions import DataError
+from tidy3d.components.data.data_array import (
+    SpatialDataArray,
+    HeatDataArray,
+    ChargeDataArray,
+    IndexedDataArray,
+)
+from tidy3d.components.data.dataset import UnstructuredGridDataset, CustomSpatialDataType
+from tidy3d.components.data.dataset import _get_numpy_array, _zeros_like, _check_same_coordinates
+from tidy3d.components.base import Tidy3dBaseModel, cached_property
+from tidy3d.constants import KELVIN, CMCUBE, PERCMCUBE, inf
+from tidy3d.log import log
+from tidy3d.components.types import Ax, ArrayLike, Complex, FieldVal, InterpMethod, TYPE_TAG_STR
+from tidy3d.components.viz import add_ax_if_none
+from tidy3d.components.data.validators import validate_no_nans
+from tidy3d.exceptions import DataError
 
 """ Generic perturbation classes """
 

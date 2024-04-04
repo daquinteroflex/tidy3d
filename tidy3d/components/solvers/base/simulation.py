@@ -13,11 +13,11 @@ from tidy3d.components.base import cached_property, skip_if_fields_missing
 from tidy3d.components.validators import assert_unique_names, assert_objects_in_sim_bounds
 from tidy3d.components.geometry.base import Box
 from tidy3d.components.types import Ax, Bound, Axis, Symmetry, TYPE_TAG_STR
-from tidy3d.components.structure import Structure
+from tidy3d.components.solvers.em.structure import Structure
 from tidy3d.components.viz import add_ax_if_none, equal_aspect
 from tidy3d.components.scene import Scene
 
-from tidy3d.components.medium import Medium, MediumType3D
+from tidy3d.components.solvers.em.medium import Medium, MediumType3D
 
 from tidy3d.components.viz import PlotParams, plot_params_symmetry
 
