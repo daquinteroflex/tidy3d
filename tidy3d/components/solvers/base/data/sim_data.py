@@ -8,13 +8,13 @@ import xarray as xr
 import pydantic.v1 as pd
 import numpy as np
 
-from .monitor_data import AbstractMonitorData
-from ..simulation import AbstractSimulation
-from ...data.dataset import UnstructuredGridDatasetType
-from ...base import Tidy3dBaseModel
-from ...base import skip_if_fields_missing
-from ...types import FieldVal
-from ....exceptions import DataError, Tidy3dKeyError, ValidationError
+from tidy3d.components.solvers.base.data.monitor_data import AbstractMonitorData
+from tidy3d.components.solvers.base.simulation import AbstractSimulation
+from tidy3d.components.data.dataset import UnstructuredGridDatasetType
+from tidy3d.components.base import Tidy3dBaseModel
+from tidy3d.components.base import skip_if_fields_missing
+from tidy3d.components.types import FieldVal
+from tidy3d.exceptions import DataError, Tidy3dKeyError, ValidationError
 
 
 class AbstractSimulationData(Tidy3dBaseModel, ABC):

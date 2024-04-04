@@ -4,8 +4,8 @@ from abc import ABC
 
 import pydantic.v1 as pd
 
-from ..monitor import AbstractMonitor
-from ...data.dataset import Dataset
+from tidy3d.components.solvers.base.monitor import AbstractMonitor
+from tidy3d.components.data.dataset import Dataset
 
 
 class AbstractMonitorData(Dataset, ABC):

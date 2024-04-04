@@ -36,7 +36,7 @@ from ...exceptions import SetupError, DataError, Tidy3dNotImplementedError, Vali
 from ...constants import ETA_0, C_0, MICROMETER
 from ...log import log
 
-from ..base_sim.data.monitor_data import AbstractMonitorData
+from tidy3d.components.base_sim import AbstractMonitorData
 
 Coords1D = ArrayFloat1D
 

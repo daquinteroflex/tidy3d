@@ -9,7 +9,7 @@ import pydantic.v1 as pd
 from .viz import plot_params_heat_source
 
 from ..base import cached_property
-from ..base_sim.source import AbstractSource
+from tidy3d.components.base_sim import AbstractSource
 from ..data.data_array import TimeDataArray
 from ..viz import PlotParams
 

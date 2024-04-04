@@ -10,7 +10,7 @@ import pydantic.v1 as pydantic
 import numpy as np
 
 from .base import cached_property, skip_if_fields_missing
-from .base_sim.source import AbstractSource
+from tidy3d.components.base_sim import AbstractSource
 from .time import AbstractTimeDependence
 from .types import Coordinate, Direction, Polarization, Ax, FreqBound
 from .types import ArrayFloat1D, Axis, PlotVal, ArrayComplex1D, TYPE_TAG_STR

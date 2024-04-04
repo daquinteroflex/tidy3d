@@ -50,7 +50,7 @@ from ..exceptions import SetupError, ValidationError, Tidy3dError, Tidy3dImportE
 from ..log import log
 from ..updater import Updater
 
-from .base_sim.simulation import AbstractSimulation
+from tidy3d.components.base_sim import AbstractSimulation
 
 try:
     gdstk_available = True

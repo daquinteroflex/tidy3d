@@ -10,7 +10,7 @@ from ..simulation import HeatSimulation
 
 from ...data.dataset import UnstructuredGridDataset, TetrahedralGridDataset, TriangularGridDataset
 from ...data.data_array import SpatialDataArray
-from ...base_sim.data.sim_data import AbstractSimulationData
+from tidy3d.components.base_sim import AbstractSimulationData
 from ...types import Ax, RealFieldVal, Literal
 from ...viz import equal_aspect, add_ax_if_none
 from ....exceptions import DataError

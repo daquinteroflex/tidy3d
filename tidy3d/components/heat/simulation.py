@@ -15,7 +15,7 @@ from .grid import HeatGridType
 from .viz import HEAT_BC_COLOR_TEMPERATURE, HEAT_BC_COLOR_FLUX, HEAT_BC_COLOR_CONVECTION
 from .viz import plot_params_heat_bc, plot_params_heat_source, HEAT_SOURCE_CMAP
 
-from ..base_sim.simulation import AbstractSimulation
+from tidy3d.components.base_sim import AbstractSimulation
 from ..base import cached_property, skip_if_fields_missing
 from ..types import Ax, Shapely, TYPE_TAG_STR, ScalarSymmetry, Bound
 from ..viz import add_ax_if_none, equal_aspect, PlotParams

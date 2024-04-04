@@ -17,7 +17,7 @@ from ...exceptions import DataError, Tidy3dKeyError
 from ...log import log
 from ..base import JSON_TAG
 
-from ..base_sim.data.sim_data import AbstractSimulationData
+from tidy3d.components.base_sim import AbstractSimulationData
 
 
 DATA_TYPE_MAP = {data.__fields__["monitor"].type_: data for data in MonitorDataTypes}

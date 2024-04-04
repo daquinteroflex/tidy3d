@@ -17,7 +17,7 @@ from ..constants import HERTZ, SECOND, MICROMETER, RADIAN, inf
 from ..exceptions import SetupError, ValidationError
 from ..log import log
 
-from .base_sim.monitor import AbstractMonitor
+from tidy3d.components.base_sim import AbstractMonitor
 
 BYTES_REAL = 4
 BYTES_COMPLEX = 8

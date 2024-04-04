@@ -5,11 +5,11 @@ from typing import Tuple
 import pydantic.v1 as pd
 import numpy as np
 
-from ..types import ArrayFloat1D, Numpy
-from ..types import Axis
-from ..geometry.base import Box
-from ..base import cached_property
-from ..viz import PlotParams, plot_params_monitor
+from tidy3d.components.types import ArrayFloat1D, Numpy
+from tidy3d.components.types import Axis
+from tidy3d.components.geometry.base import Box
+from tidy3d.components.base import cached_property
+from tidy3d.components.viz import PlotParams, plot_params_monitor
 
 
 class AbstractMonitor(Box, ABC):

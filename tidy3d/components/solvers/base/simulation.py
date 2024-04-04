@@ -9,21 +9,21 @@ import pydantic.v1 as pd
 
 from .monitor import AbstractMonitor
 
-from ..base import cached_property, skip_if_fields_missing
-from ..validators import assert_unique_names, assert_objects_in_sim_bounds
-from ..geometry.base import Box
-from ..types import Ax, Bound, Axis, Symmetry, TYPE_TAG_STR
-from ..structure import Structure
-from ..viz import add_ax_if_none, equal_aspect
-from ..scene import Scene
+from tidy3d.components.base import cached_property, skip_if_fields_missing
+from tidy3d.components.validators import assert_unique_names, assert_objects_in_sim_bounds
+from tidy3d.components.geometry.base import Box
+from tidy3d.components.types import Ax, Bound, Axis, Symmetry, TYPE_TAG_STR
+from tidy3d.components.structure import Structure
+from tidy3d.components.viz import add_ax_if_none, equal_aspect
+from tidy3d.components.scene import Scene
 
-from ..medium import Medium, MediumType3D
+from tidy3d.components.medium import Medium, MediumType3D
 
-from ..viz import PlotParams, plot_params_symmetry
+from tidy3d.components.viz import PlotParams, plot_params_symmetry
 
-from ...version import __version__
-from ...exceptions import Tidy3dKeyError
-from ...log import log
+from tidy3d.version import __version__
+from tidy3d.exceptions import Tidy3dKeyError
+from tidy3d.log import log
 
 
 class AbstractSimulation(Box, ABC):

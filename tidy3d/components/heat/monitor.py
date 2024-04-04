@@ -4,7 +4,7 @@ import pydantic.v1 as pd
 from typing import Union
 
 from ..types import ArrayFloat1D
-from ..base_sim.monitor import AbstractMonitor
+from tidy3d.components.base_sim import AbstractMonitor
 
 
 BYTES_REAL = 4
