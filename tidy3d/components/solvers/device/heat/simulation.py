@@ -16,24 +16,24 @@ from .viz import HEAT_BC_COLOR_TEMPERATURE, HEAT_BC_COLOR_FLUX, HEAT_BC_COLOR_CO
 from .viz import plot_params_heat_bc, plot_params_heat_source, HEAT_SOURCE_CMAP
 
 from tidy3d.components.base_sim import AbstractSimulation
-from ..base import cached_property, skip_if_fields_missing
-from ..types import Ax, Shapely, TYPE_TAG_STR, ScalarSymmetry, Bound
-from ..viz import add_ax_if_none, equal_aspect, PlotParams
-from ..structure import Structure
-from ..geometry.base import Box, GeometryGroup
-from ..geometry.primitives import Sphere, Cylinder
-from ..geometry.polyslab import PolySlab
-from ..geometry.mesh import TriangleMesh
-from ..scene import Scene
+from tidy3d.components.base import cached_property, skip_if_fields_missing
+from tidy3d.components.types import Ax, Shapely, TYPE_TAG_STR, ScalarSymmetry, Bound
+from tidy3d.components.viz import add_ax_if_none, equal_aspect, PlotParams
+from tidy3d.components.structure import Structure
+from tidy3d.components.geometry.base import Box, GeometryGroup
+from tidy3d.components.geometry.primitives import Sphere, Cylinder
+from tidy3d.components.geometry.polyslab import PolySlab
+from tidy3d.components.geometry.mesh import TriangleMesh
+from tidy3d.components.scene import Scene
 
-from ..bc_placement import StructureBoundary, StructureStructureInterface
-from ..bc_placement import StructureSimulationBoundary, SimulationBoundary
-from ..bc_placement import MediumMediumInterface
+from tidy3d.components.bc_placement import StructureBoundary, StructureStructureInterface
+from tidy3d.components.bc_placement import StructureSimulationBoundary, SimulationBoundary
+from tidy3d.components.bc_placement import MediumMediumInterface
 
-from ...exceptions import SetupError
-from ...constants import inf, VOLUMETRIC_HEAT_RATE
+from tidy3d.exceptions import SetupError
+from tidy3d.constants import inf, VOLUMETRIC_HEAT_RATE
 
-from ...log import log
+from tidy3d.log import log
 
 HEAT_BACK_STRUCTURE_STR = "<<<HEAT_BACKGROUND_STRUCTURE>>>"
 

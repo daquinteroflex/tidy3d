@@ -3,7 +3,7 @@ from abc import ABC
 import pydantic.v1 as pd
 from typing import Union
 
-from ..types import ArrayFloat1D
+from tidy3d.components.types import ArrayFloat1D
 from tidy3d.components.base_sim import AbstractMonitor
 
 

@@ -7,14 +7,14 @@ from abc import ABC
 import pydantic.v1 as pd
 
 from ..monitor import TemperatureMonitor, HeatMonitorType
-from ...base import skip_if_fields_missing
+from tidy3d.components.base import skip_if_fields_missing
 from tidy3d.components.base_sim import AbstractMonitorData
-from ...data.data_array import SpatialDataArray
-from ...data.dataset import TriangularGridDataset, TetrahedralGridDataset
-from ...types import ScalarSymmetry, Coordinate, annotate_type
-from ....constants import KELVIN
+from tidy3d.components.data.data_array import SpatialDataArray
+from tidy3d.components.data.dataset import TriangularGridDataset, TetrahedralGridDataset
+from tidy3d.components.types import ScalarSymmetry, Coordinate, annotate_type
+from tidy3d.constants import KELVIN
 
-from ....log import log
+from tidy3d.log import log
 
 
 class HeatMonitorData(AbstractMonitorData, ABC):

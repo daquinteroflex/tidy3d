@@ -6,10 +6,10 @@ from typing import Union
 
 import pydantic.v1 as pd
 
-from ..base import Tidy3dBaseModel
-from ..bc_placement import BCPlacementType
+from tidy3d.components.base import Tidy3dBaseModel
+from tidy3d.components.bc_placement import BCPlacementType
 
-from ...constants import KELVIN, HEAT_FLUX, HEAT_TRANSFER_COEFF
+from tidy3d.constants import KELVIN, HEAT_FLUX, HEAT_TRANSFER_COEFF
 
 
 class HeatBC(ABC, Tidy3dBaseModel):

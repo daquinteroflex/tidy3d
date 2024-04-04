@@ -4,9 +4,9 @@ from __future__ import annotations
 from typing import Union, Tuple
 import pydantic.v1 as pd
 
-from ..base import Tidy3dBaseModel, skip_if_fields_missing
-from ...constants import MICROMETER
-from ...exceptions import ValidationError
+from tidy3d.components.base import Tidy3dBaseModel, skip_if_fields_missing
+from tidy3d.constants import MICROMETER
+from tidy3d.exceptions import ValidationError
 
 
 class UniformUnstructuredGrid(Tidy3dBaseModel):

@@ -21,7 +21,7 @@ from ..core.types import TaskType
 from ...components.simulation import Simulation
 from ...plugins.mode.mode_solver import ModeSolver
 from ...components.heat.simulation import HeatSimulation
-from ...components.heat.data.sim_data import HeatSimulationData
+from tidy3d.components.solvers.device.heat.data.sim_data import HeatSimulationData
 
 SimulationType = Union[Simulation, HeatSimulation]
 SimulationDataType = Union[SimulationData, HeatSimulationData]

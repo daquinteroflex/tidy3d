@@ -8,12 +8,12 @@ import pydantic.v1 as pd
 
 from .viz import plot_params_heat_source
 
-from ..base import cached_property
+from tidy3d.components.base import cached_property
 from tidy3d.components.base_sim import AbstractSource
-from ..data.data_array import TimeDataArray
-from ..viz import PlotParams
+from tidy3d.components.data.data_array import TimeDataArray
+from tidy3d.components.viz import PlotParams
 
-from ...constants import VOLUMETRIC_HEAT_RATE
+from tidy3d.constants import VOLUMETRIC_HEAT_RATE
 
 
 class HeatSource(AbstractSource, ABC):

@@ -8,12 +8,16 @@ import pydantic.v1 as pd
 from .monitor_data import HeatMonitorDataType, TemperatureData
 from ..simulation import HeatSimulation
 
-from ...data.dataset import UnstructuredGridDataset, TetrahedralGridDataset, TriangularGridDataset
-from ...data.data_array import SpatialDataArray
+from tidy3d.components.data.dataset import (
+    UnstructuredGridDataset,
+    TetrahedralGridDataset,
+    TriangularGridDataset,
+)
+from tidy3d.components.data.data_array import SpatialDataArray
 from tidy3d.components.base_sim import AbstractSimulationData
-from ...types import Ax, RealFieldVal, Literal
-from ...viz import equal_aspect, add_ax_if_none
-from ....exceptions import DataError
+from tidy3d.components.types import Ax, RealFieldVal, Literal
+from tidy3d.components.viz import equal_aspect, add_ax_if_none
+from tidy3d.exceptions import DataError
 
 
 class HeatSimulationData(AbstractSimulationData):
