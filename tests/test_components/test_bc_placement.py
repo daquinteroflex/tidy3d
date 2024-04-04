@@ -1,4 +1,4 @@
-from tidy3d.components.bc_placement import (
+from tidy3d.components.solvers.bc_placement import (
     StructureBoundary,
     StructureStructureInterface,
     SimulationBoundary,

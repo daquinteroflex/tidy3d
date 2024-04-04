@@ -6,9 +6,9 @@ from typing import Union, Tuple
 
 import pydantic.v1 as pd
 
-from .types import BoxSurface
-from .base import Tidy3dBaseModel
-from ..exceptions import SetupError
+from tidy3d.components.types import BoxSurface
+from tidy3d.components.base import Tidy3dBaseModel
+from tidy3d.exceptions import SetupError
 
 
 class AbstractBCPlacement(ABC, Tidy3dBaseModel):

@@ -26,9 +26,9 @@ from tidy3d.components.geometry.polyslab import PolySlab
 from tidy3d.components.geometry.mesh import TriangleMesh
 from tidy3d.components.scene import Scene
 
-from tidy3d.components.bc_placement import StructureBoundary, StructureStructureInterface
-from tidy3d.components.bc_placement import StructureSimulationBoundary, SimulationBoundary
-from tidy3d.components.bc_placement import MediumMediumInterface
+from tidy3d.components.solvers.bc_placement import StructureBoundary, StructureStructureInterface
+from tidy3d.components.solvers.bc_placement import StructureSimulationBoundary, SimulationBoundary
+from tidy3d.components.solvers.bc_placement import MediumMediumInterface
 
 from tidy3d.exceptions import SetupError
 from tidy3d.constants import inf, VOLUMETRIC_HEAT_RATE

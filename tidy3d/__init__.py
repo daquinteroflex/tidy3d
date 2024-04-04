@@ -35,7 +35,6 @@ from tidy3d.components.solvers.em.medium import (
     TwoPhotonAbsorption,
     KerrNonlinearity,
 )
-from .components.transformation import RotationAroundAxis
 from tidy3d.components.solvers.em.medium import PerturbationMedium, PerturbationPoleResidue
 from tidy3d.components.translation.parameter_perturbation import ParameterPerturbation
 from tidy3d.components.translation.parameter_perturbation import (
@@ -61,7 +60,6 @@ from tidy3d.components.solvers.em.mode import ModeSpec
 from .components.apodization import ApodizationSpec
 
 # sources
-from .components.source import CustomFieldSource, TFSF, CustomCurrentSource
 
 # monitors
 from tidy3d.components.solvers.em.monitor import (
@@ -145,7 +143,6 @@ from .material_library.parametric_materials import Graphene
 # for docs
 from tidy3d.components.solvers.em.medium import AbstractMedium, NonlinearSpec, NonlinearModel
 from .components.geometry.base import Geometry
-from .components.source import Source, SourceTime
 from tidy3d.components.solvers.em.monitor import Monitor
 from .components.grid.grid import YeeGrid, FieldGrid, Coords1D
 
@@ -164,10 +161,10 @@ from .updater import Updater
 from .components.scene import Scene
 
 # boundary placement for other solvers
-from .components.bc_placement import StructureStructureInterface, StructureBoundary
-from .components.bc_placement import MediumMediumInterface
-from .components.bc_placement import StructureSimulationBoundary
-from .components.bc_placement import SimulationBoundary
+from tidy3d.components.solvers.bc_placement import StructureStructureInterface, StructureBoundary
+from tidy3d.components.solvers.bc_placement import MediumMediumInterface
+from tidy3d.components.solvers.bc_placement import StructureSimulationBoundary
+from tidy3d.components.solvers.bc_placement import SimulationBoundary
 
 # heat
 from tidy3d.components.solvers.device.heat_spec import FluidSpec, SolidSpec

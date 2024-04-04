@@ -37,7 +37,7 @@ from tidy3d.constants import HERTZ, CONDUCTIVITY, PERMITTIVITY, RADPERSEC, MICRO
 from tidy3d.constants import WATT, VOLT
 from tidy3d.exceptions import ValidationError, SetupError
 from tidy3d.log import log
-from tidy3d.components.transformation import RotationType
+from tidy3d.components.geometry.transformation import RotationType
 from tidy3d.components.translation.parameter_perturbation import ParameterPerturbation
 from tidy3d.components.solvers.device.heat_spec import HeatSpecType
 from tidy3d.components.time_modulation import ModulationSpec
