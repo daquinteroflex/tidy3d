@@ -5541,4 +5541,4 @@ vtk = ["vtk"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<4.0.0"
-content-hash = "effbcf007d2b0dafa6d32f0c06c208aa4f71da7f7346677549785d9fb6b763de"
+content-hash = "f6ea6793ee21c68d7fb8011fcad9eb0e5ed519cdf4de908b738efaac3a5a66ad"
